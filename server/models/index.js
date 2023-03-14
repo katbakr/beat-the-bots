@@ -1,6 +1,6 @@
-//placeholder for initial commit 
-//UPDATE UPON MODEL BUILD
+const User = require('./User');
+const Bot = require('./Bot');
+const Game = require('./Game');
+const Comment = require('./Comment');
 
-const Placeholder = require('./Placeholder');
-
-module.exports = { Placeholder };
+module.exports = { User, Bot, Game, Comment };
