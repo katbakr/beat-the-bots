@@ -59,16 +59,25 @@ const typeDefs = `#graphql
       _id: ID
       username: String
       password: String
-      levels: [String]
+      levels: [Level]
+    }
+    type Level {
+      levelId: INT
+      levelName: String
+      isLocked: Boolean
+      isDefeated: Boolean
+      roundHistory: [String]
+      _id: ID
     }
     
     type Query {
-      user: User,
+      user(_id:ID!): User
+      allusers:[User]
     }
-
+  
     type Mutation {
       addUser(username: String!, password: String!): User
     }
-`
+`;
 
 module.exports = typeDefs;
