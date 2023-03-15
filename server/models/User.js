@@ -70,12 +70,12 @@ const levelData = [
 
 const User = model('User', userSchema);
 
-User.create({ username: "Frodo", password: "password", levels: levelData }, (err, data) => {
-  if (err) {
-    console.log("this is the error", err);
-  } else {
-    console.log("this is the data", data);
-  }
-})
+// User.create({ username: "Frodo", password: "password", levels: levelData }, (err, data) => {
+//   if (err) {
+//     console.log("this is the error", err);
+//   } else {
+//     console.log("this is the data", data);
+//   }
+// })
 
 module.exports = User;

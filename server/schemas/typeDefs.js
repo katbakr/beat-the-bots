@@ -39,13 +39,13 @@
 //     user: User
 //     }
 
-    // type Query {
-    //   users: [User],
-    //   games: [Game],
-    //   bots: [Bot],
-    //   comments: [Comment],
-    //   rounds: [Round]
-    // }
+// type Query {
+//   users: [User],
+//   games: [Game],
+//   bots: [Bot],
+//   comments: [Comment],
+//   rounds: [Round]
+// }
 
 //     #type Mutation {
 
@@ -58,12 +58,16 @@ const typeDefs = `#graphql
     type User {
       _id: ID
       username: String
-      passwrod: String
+      password: String
       levels: [String]
     }
     
     type Query {
-      users: [User],
+      user: User,
+    }
+
+    type Mutation {
+      addUser(username: String!, password: String!): User
     }
 `
 
