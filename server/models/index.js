@@ -1,6 +1,5 @@
 const User = require('./User');
-const Bot = require('./Bot');
-const Game = require('./Game');
-const Comment = require('./Comment');
+const Level = require('./Level');
 
-module.exports = { User, Bot, Game, Comment };
+
+module.exports = { User, Level };
