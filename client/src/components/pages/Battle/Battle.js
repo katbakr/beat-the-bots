@@ -36,7 +36,7 @@ function Battle() {
             </h1>
             </div>
             <div class='botCard'>
-            <img>{botImg}</img>
+            {/* <img>{botImg}</img> */}
             
             <h3>Taunt for Bot</h3>
 
