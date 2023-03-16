@@ -1,6 +1,3 @@
-//Placeholder for commit
-//DELETE UPON BUILD
-
 const { User } = require("../models");
 const levelData = [
 	{
