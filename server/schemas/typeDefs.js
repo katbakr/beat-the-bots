@@ -62,7 +62,7 @@ const typeDefs = `#graphql
       levels: [Level]
     }
     type Level {
-      levelId: INT
+      levelId: Int
       levelName: String
       isLocked: Boolean
       isDefeated: Boolean
