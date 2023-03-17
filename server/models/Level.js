@@ -19,20 +19,20 @@ const levelSchema = new Schema({
     required: true,
   },
   roundHistory: [
-    // {
-    //   botChoice: {
-    //     type: String,
-    //     required: true,
-    //   },
-    //   humanChoice: {
-    //     type: String,
-    //     required: true,
-    //   },
-    //   humanWin: {
-    //     type: Boolean,
-    //     required: true,
-    //   },
-    // },
+    {
+      botChoice: {
+        type: String,
+        required: true,
+      },
+      humanChoice: {
+        type: String,
+        required: true,
+      },
+      humanWin: {
+        type: Boolean,
+        required: true,
+      },
+    },
   ],
 });
 

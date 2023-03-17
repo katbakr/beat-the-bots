@@ -1,4 +1,8 @@
 const { User } = require("../models");
+
+//bringing in the signToken from the the function in auth
+const { signToken } = require("../utils/auth");
+
 const levelData = [
 	{
 		levelId: 1,
@@ -51,14 +55,15 @@ const resolvers = {
 	},
 	Mutation: {
 		addUser: async (parent, { username, password }) => {
-			// const user = await User.create(args);
-			const user = await User.create({
-				username: username,
-				password: password,
-				levels: levelData,
-			});
-			console.log("this is the user", user);
-			return user;
+			const user = await User.create({ 
+        username, 
+        password,
+        levels: levelData,
+      });
+			//now that a user has been added, we will make a token out of that user
+			const token = signToken(user);
+			//return user;
+			return { token, user };
 		},
 	},
 };
