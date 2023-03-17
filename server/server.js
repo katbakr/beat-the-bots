@@ -74,8 +74,8 @@ io.on('connection', (socket) => {
 	});
 
 	socket.on('send_message', (data) => {
-		// all clients in room recieve the sent message, including sender
-		io.in(data.room).emit('recieve_message', data);
+		// all clients in room receive the sent message, including sender
+		io.in(data.room).emit('receive_message', data);
 	});
 
 	socket.on('leave_room', (data) => {
