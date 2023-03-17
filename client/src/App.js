@@ -15,6 +15,11 @@ import Signup from "./components/pages/Signup";
 import Battle from "./components/pages/Battle";
 import Bye from "./components/pages/Bye";
 
+import io from 'socket.io-client';
+
+// connect to SERVER port
+const socket = io.connect();
+
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -43,7 +48,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/battle" element={<Battle />} />
+            <Route path="/battle" element={<Battle socket={socket} />} />
             <Route path="*" element={<Bye />} />
           </Routes>
         </Router>

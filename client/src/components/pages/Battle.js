@@ -1,21 +1,23 @@
 import { Component } from "react";
 import { useMutation } from "@apollo/client";
+import Chat from '../chat/Chat.js'
+// import MessageForm from '../chat/MessageForm.js'
 
-function Battle() {
-    const choicesList = [
-        {
-            id: "ROCK",
-            image: "../assets/paper.png",
-        },
-        {
-            id: "SCISSORS",
-            image: "",
-        },
-        {
-            id: "PAPER",
-            image: "",
-        },
-    ];
+export default function Battle({socket}) {
+    // const choicesList = [
+    //     {
+    //         id: "ROCK",
+    //         image: "../assets/paper.png",
+    //     },
+    //     {
+    //         id: "SCISSORS",
+    //         image: "",
+    //     },
+    //     {
+    //         id: "PAPER",
+    //         image: "",
+    //     },
+    // ];
 
     return (
         <div>
@@ -24,11 +26,12 @@ function Battle() {
             </div>
             <div class="botCard">
                 <h3>Taunt for Bot</h3>
-                choicesList={choicesList}
+                {/* choicesList={choicesList} */}
             </div>
-            <div class="commentBox"></div>
+            <div> 
+            < Chat socket={socket} ussername='horseTeeth' room='room 1' />
+            </div>
         </div>
     );
 }
 
-export default Battle;

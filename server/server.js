@@ -14,7 +14,7 @@ const { typeDefs, resolvers } = require("./schemas");
 const db = require("./config/connection");
 
 const PORT = process.env.PORT || 3001;
-const SOCKETPORT = process.env.SOCKETPORT || 3000;
+const SOCKETPORT = process.env.SOCKETPORT || 4000;
 
 const app = express(cors()); // needs cors middleware for socket.io to work
 const httpServer = http.createServer(app);
