@@ -74,8 +74,10 @@ io.on('connection', (socket) => {
 	});
 
 	socket.on('send_message', (data) => {
-		// all clients in room recieve the sent message, including sender
-		io.in(data.room).emit('recieve_message', data);
+		// destructure from data
+		const { username, room, message } = data;
+		// all clients in room receive the sent message, including sender
+		io.in(room).emit('receive_message', { username: username, message: message });
 	});
 
 	socket.on('leave_room', (data) => {
