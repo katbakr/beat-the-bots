@@ -30,53 +30,6 @@ userSchema.methods.isCorrectPassword = async function (password) {
 	return bcrypt.compare(password, this.password);
 };
 
-const levelData = [
-	{
-		levelId: 1,
-		levelName: "Level1",
-		isLocked: false,
-		isDefeated: false,
-		roundHistory: [],
-	},
-	{
-		levelId: 2,
-		levelName: "Level2",
-		isLocked: true,
-		isDefeated: false,
-		roundHistory: [],
-	},
-	{
-		levelId: 3,
-		levelName: "Level3",
-		isLocked: true,
-		isDefeated: false,
-		roundHistory: [],
-	},
-	{
-		levelId: 4,
-		levelName: "Level4",
-		isLocked: true,
-		isDefeated: false,
-		roundHistory: [],
-	},
-	{
-		levelId: 5,
-		levelName: "Level5",
-		isLocked: true,
-		isDefeated: false,
-		roundHistory: [],
-	},
-];
-
 const User = model("User", userSchema);
-
-// the following was just to try making a single user
-// User.create({ username: "Frodo", password: "password", levels: levelData }, (err, data) => {
-//   if (err) {
-//     console.log("this is the error", err);
-//   } else {
-//     console.log("this is the data", data);
-//   }
-// })
 
 module.exports = User;
