@@ -18,7 +18,7 @@ import Bye from "./components/pages/Bye";
 import io from 'socket.io-client';
 
 // connect to SERVER port
-const socket = io.connect();
+const socket = io();
 
 const httpLink = createHttpLink({
   uri: "/graphql",
