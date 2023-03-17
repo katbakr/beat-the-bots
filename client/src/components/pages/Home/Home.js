@@ -1,10 +1,9 @@
 import React from 'react';
-import ArcadeButton from 'react-native-arcade-button'
+import ArcadeButton from 'react-native-arcade-button';
 
 // import { useQuery } from '@apollo/client';
 
 class Foo extends React.Component {
-
     // onClick = (e) => {
 
     // }
@@ -20,6 +19,7 @@ render() {
 
             <ArcadeButton>
                 onPressOut={this.onClick}
+                <Text>Signup</Text>
             </ArcadeButton>
 
 
@@ -29,3 +29,5 @@ render() {
     )
 }
 }
+
+export default Home;

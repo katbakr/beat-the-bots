@@ -32,13 +32,7 @@ export default function PageContainer() {
 
 return (
     <div id='page'>
-      {/* <img ></img> */}
-      {/* <h1 id='header'>Hello World!</h1> */}
-      {/* <h2 style={styles.h2}>I'm Katrina Baker</h2> */}
       <main>
-        {/* <div id='navbar'>
-          <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
-        </div> */}
         <div >
           {renderPage()}
         </div>
