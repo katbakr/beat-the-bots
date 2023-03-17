@@ -1,10 +1,11 @@
 const express = require("express");
 const { ApolloServer } = require("@apollo/server");
 const { expressMiddleware } = require("@apollo/server/express4");
-const {
-	ApolloServerPluginDrainHttpServer,
-} = require("@apollo/server/plugin/drainHttpServer");
+const { ApolloServerPluginDrainHttpServer } = require("@apollo/server/plugin/drainHttpServer");
 const http = require("http");
+const cors = require('cors');
+const socketio = require('socket.io');
+
 
 //gets the auth utility
 const { authMiddleware } = require("./utils/auth");
@@ -13,8 +14,9 @@ const { typeDefs, resolvers } = require("./schemas");
 const db = require("./config/connection");
 
 const PORT = process.env.PORT || 3001;
+const SOCKETPORT = process.env.SOCKETPORT || 3000;
 
-const app = express();
+const app = express(cors()); // needs cors middleware for socket.io to work
 const httpServer = http.createServer(app);
 
 const server = new ApolloServer({
@@ -22,6 +24,14 @@ const server = new ApolloServer({
 	resolvers,
 	plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
 	context: authMiddleware,
+});
+
+// create a socket.io server and allow CORS
+const io = new socketio.Server(httpServer, {
+	cors: {
+		origin: SOCKETPORT,
+		methods: ['GET', 'POST'],
+	},
 });
 
 app.use(express.urlencoded({ extended: false }));
@@ -51,5 +61,29 @@ const startApolloServer = async (typeDefs, resolvers) => {
 		});
 	});
 };
+
+// listen for when the client connects via socket.io-client
+io.on('connection', (socket) => {
+	console.log(`user connected ${socket.id}`);
+
+	socket.on('join_room', (data) => {
+		const { username, room } = data;
+		// join a user to a socket server room
+		socket.join(room);
+		console.log(`${username} has joined ${room}`);
+	});
+
+	socket.on('send_message', (data) => {
+		// all clients in room recieve the sent message, including sender
+		io.in(data.room).emit('recieve_message', data);
+	});
+
+	socket.on('leave_room', (data) => {
+		const { username, room } = data;
+		// remove the user from the socket server room
+		socket.leave(room);
+		console.log(`${username} has left ${room}`);
+	});
+});
 
 startApolloServer(typeDefs, resolvers);
