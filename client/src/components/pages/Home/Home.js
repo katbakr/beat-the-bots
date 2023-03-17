@@ -1,33 +1,48 @@
 import React from 'react';
-import ArcadeButton from 'react-native-arcade-button';
+// import ArcadeButton from 'react-native-arcade-button';
+// import botImage from '/assets/homeBot.png'
+// import '../home.css';
+import { Link } from 'react-router-dom';
 
-// import { useQuery } from '@apollo/client';
 
-class Foo extends React.Component {
-    // onClick = (e) => {
 
-    // }
-render() {
+export default function Home({ currentPage, handlePageChange }) {
+
+
     return (
         <div class='landingPage'>
-            <h1> Beat the Bots!</h1>
+            <div>
+                <h1> Beat the Bots!</h1>
+                <img src='/assets/homeBot.png'></img>
+                {/* <a href='/assets/homeBot.png'></a> */}
+                <h3>
+                    A team building game to challenge your
+                    communication and problem solving skills.
+                </h3>
+            </div>
+            <div>
 
-            <h3>
-                A team building game to challenge your
-                communication and problem solving skills.
-            </h3>
+                {/* <a 
+          href="#home"
+          onClick={() => handlePageChange('Dashboard')} 
+          className={currentPage === 'Home' ? 'Dashboard' : ''}
+        >
+          Home
+        </a> */}
 
-            <ArcadeButton>
+
+                <Link to='/signup' >Signup</Link>
+                <Link to='/login'>Login</Link>
+            </div>
+
+            {/* <ArcadeButton>
                 onPressOut={this.onClick}
                 <Text>Signup</Text>
-            </ArcadeButton>
-
-
-
+            </ArcadeButton> */}
+            {/* <h1>Push the button<small>(s)</small></h1>
+<p>flat or not…</p>
+<button class="push--flat"></button> <button></button> */}
 
         </div>
     )
 }
-}
-
-export default Home;

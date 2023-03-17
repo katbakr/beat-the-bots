@@ -1,0 +1,42 @@
+/* *bg: #333;
+*push-color: hsla(10, 90%, 40%, 1);
+
+$push-size: 240px;
+
+body {
+  margin: 1em;
+  background: $bg;
+  color: #ccc;
+  font: normal 3vw/1 'Montserrat', sans-serif;;
+  text-align: center;
+  text-transform: uppercase;
+}
+h1 {
+  font-size: 5vw;
+}
+
+.push--flat {
+    position: relative;
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border: 0;
+    margin: 1em;
+    outline: none;
+    background-color: red;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: box-shadow 200ms;
+} */
+
+
+.landingPage {
+background-color: black;
+color: white;
+}
+
+#page {
+outline: solid red 2px;
+height: 100vh;
+background-color: red;
+}
