@@ -9,10 +9,10 @@ import {
 import { setContext } from "@apollo/client/link/context";
 import "./App.css";
 
-import Home from "./components/pages/Home/Home";
+import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
 import Signup from "./components/pages/Signup";
-import Battle from "./components/pages/Battle/Battle";
+import Battle from "./components/pages/Battle";
 import Bye from "./components/pages/Bye";
 
 const httpLink = createHttpLink({
@@ -36,22 +36,19 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <ApolloProvider client={client}>
-      <Router>
-        <div className="layout">
-          {/* <StoreProvider> */}
-            {/* <Nav /> */}
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/battle" element={<Battle />} />
-              <Route path="*" element={<Bye />} />
-            </Routes>
-          {/* </StoreProvider> */}
-        </div>
-      </Router>
-    </ApolloProvider>
+    <div className="layout">
+      <ApolloProvider client={client}>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/battle" element={<Battle />} />
+            <Route path="*" element={<Bye />} />
+          </Routes>
+        </Router>
+      </ApolloProvider>
+    </div>
   );
 }
 
