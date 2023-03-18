@@ -14,6 +14,7 @@ import Login from "./components/pages/Login";
 import Signup from "./components/pages/Signup";
 import Battle from "./components/pages/Battle";
 import Bye from "./components/pages/Bye";
+import Dashboard from "./components/pages/Dashboard";
 
 import io from 'socket.io-client';
 // connect to SERVER port
@@ -47,6 +48,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/dashboard" element={<Dashboard socket={socket} />} />
             <Route path="/battle" element={<Battle socket={socket} />} />
             <Route path="*" element={<Bye />} />
           </Routes>
