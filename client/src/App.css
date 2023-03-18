@@ -285,13 +285,16 @@ img {
 .messageTect {
   background-color: blue;
 } */
-
+.messagesContainer {
+  background-color: pink;
+padding: 6rem;
+}
 
 .messageInputContainer{
-background-image: linear-gradient(black, rgb(25, 25, 25), black);
+/* background-image: linear-gradient(black, rgb(25, 25, 25), black);
   padding: 2rem;
   height: 40rem;
-  width: auto;
+  width: auto; */
   /* padding-top: 40rem; */
   box-shadow: 4px 4px 4px #fff, 0 0 10px #fff, 0 0 9px #fff,
     0 0 20px rgb(177, 225, 253), 0 0 80px rgb(148, 202, 244),
