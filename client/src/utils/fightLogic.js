@@ -46,7 +46,7 @@ const bot3 = (e) => {
   const botChoice = () => {
     //randomly pick an index of the array
     //if "" is paper, otherwise scissors
-    const random = Math.floor(Math.random() * messages.length);
+    const random = messages[Math.floor(Math.random() * messages.length)];
     if (random === "") {
       setBotCHoice("PAPER");
     } else {
