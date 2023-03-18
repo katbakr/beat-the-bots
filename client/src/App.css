@@ -5,7 +5,7 @@
 }
 
 /* Home.js ======================================================= */
-.landingPage {
+.base {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,8 +39,8 @@
   font-size: 6rem;
   text-align: center;
   margin: 1rem;
-  color: #00bff3;
-  text-shadow: 0 0 7px #cecece, 0 0 10px #505050, 0 0 21px #fff,
+  color: #77c3d8;
+  text-shadow: 0 0 7px #b5c5c9, 0 0 10px #505050, 0 0 21px #fff,
     0 0 42px rgb(0, 166, 255), 0 0 82px rgb(0, 162, 255),
     0 0 92px rgb(0, 162, 255), 0 0 102px rgb(0, 166, 255),
     0 0 151px rgb(0, 166, 255);
@@ -68,8 +68,8 @@
   height: 10rem;
   width: 10rem;
   border-radius: 50%;
-  background-color: rgb(6, 31, 59);
-  box-shadow: 0 0 0 5px #283253 inset;
+  background-color: rgb(9, 38, 70);
+  box-shadow: 0 0 0 5px #252e4b inset;
 }
 
 .btnOut2 {
@@ -90,8 +90,10 @@
   background-color: rgb(35, 65, 147);
   color: white;
   cursor: pointer;
-  box-shadow: 0 0 0 1px black, 0 0 0 3px #313e67 inset, 0 0 0 15px #0b357a inset,
-    10px 25px 32px 25px #0e305a inset;
+  box-shadow: 0 0 0 3px rgb(15, 15, 47), 0 0 0 3px #161b2c inset, 0 0 5px 8px#3f4867 inset,0 0 0 17px #15305d inset,
+    10px 25px 32px 25px #0b2340 inset;
+
+    /* , 0 4px  10px  8px #2f395c inset */
 }
 .homeBtn2 {
   height: 8.5rem;
@@ -102,15 +104,24 @@
   background-color: rgb(138, 35, 147);
   color: white;
   cursor: pointer;
-  box-shadow: 0 0 0 1px black, 0 0 0 3px #673163 inset, 0 0 0 15px #7a0b72 inset,
-    10px 25px 32px 25px #5a0e54 inset;
+  box-shadow: 0 0 0 3px rgb(44, 15, 47), 0 0 0 3px #27162c inset, 0 0 5px 8px#533663 inset,0 0 0 17px #51155d inset,
+    10px 25px 32px 25px #3e0b40 inset;
 }
 
-.homeBtn1 :active {
+.homeBtn1:active {
   transform: translateY(-2px);
-  background-color: #cecece;
-  box-shadow: 0 0 0 1px black, 0 0 0 3px #491d1d inset;
+  background-color: #263150;
+  box-shadow: 0 0 0 6px rgb(15, 15, 47), 0 0 0 6px #161b2c inset, 0 0 5px 8px#3b435f inset,0 0 0 17px #11264b inset,
+    10px 25px 32px 25px #071729 inset;
 }
+
+.homeBtn2:active {
+  transform: translateY(-2px);
+  background-color: rgb(92, 22, 97);
+  box-shadow: 0 0 0 6px rgb(22, 8, 23), 0 0 0 6px #1c1020 inset, 0 0 5px 8px#422752 inset,0 0 0 17px #45114f inset,
+  10px 25px 32px 25px #3e0b40 inset;
+}
+
 
 img {
   height: 30rem;
@@ -118,15 +129,202 @@ img {
   width: auto;
 }
 
-.landingPage h1 {
+/* .landingPage h1 {
   color: white;
-  /* font-size: 4rem; */
-}
+
+} */
 /* Battle Page================================================================ */
-.header {
-  background-color: #00bff3;
+#display {
+  display: flex;
+  justify-content: center;
 }
 
+.titleContainer{
+  display: flex;
+  justify-content: center;
+
+}
+
+.battleTitle {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  font-size: 3rem;
+  text-align: center;
+  color: #e5ecee;
+  text-shadow: 0 0 7px #cecece, 0 0 10px #505050, 0 0 21px #fff,
+    0 0 42px rgb(0, 166, 255), 0 0 82px rgb(0, 162, 255),
+    0 0 92px rgb(0, 162, 255), 0 0 102px rgb(0, 166, 255),
+    0 0 151px rgb(0, 166, 255);
+  font-family: "Silkscreen", cursive;
+  margin: .5rem;
+}
+
+.playContainer {
+  display: flex;
+}
+.botBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 8rem;
+}
+
+.botImg{
+  box-shadow: 4px 4px 4px #fff, 0 0 10px #fff, 0 0 9px #fff,
+    0 0 20px rgb(177, 225, 253), 0 0 80px rgb(148, 202, 244),
+    0 0 30px rgb(95, 158, 236), 0 0 80px rgb(64, 144, 230),
+    0 0 20px rgb(28, 150, 226);
+    margin: 2rem;
+}
+.botImg img {
+  margin: 0;
+  width: 28rem;
+  height: auto;
+}
+
+.botTaunt {
+  text-shadow: 0 0 7px #cecece, 0 0 10px #505050, 0 0 21px #fff,
+  0 0 42px rgb(0, 157, 255), 0 0 82px rgb(0, 149, 255),
+  0 0 92px rgb(0, 145, 255), 0 0 102px rgb(0, 136, 255),
+  0 0 151px rgb(0, 149, 255);
+  color: rgb(177, 210, 246);
+}
+.userChoices {
+  display: flex;
+}
+.choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.choice img{
+  margin: .5rem;
+  width: 8rem;
+  height: auto;
+}
+
+.btn1 {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  background-color: rgb(9, 70, 30);
+  box-shadow: 0 0 0 5px #254b34 inset;
+}
+
+.btn2 {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  background-color: rgb(70, 9, 9);
+  box-shadow: 0 0 0 5px #4b2525 inset;
+}
+
+.btn3 {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  background-color: rgb(125, 115, 18);
+  box-shadow: 0 0 0 5px #79713d inset;
+}
+.paperBtn {
+  height: 5.5rem;
+  width: 5.5rem;
+  border-radius: 50%;
+  margin: 0.75rem;
+  font-size: 1.5rem;
+  background-color: rgb(215, 40, 40);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 0 3px rgb(15, 15, 47), 0 0 0 3px #2c1616 inset, 0 0 5px 8px#8d2929 inset,0 0 0 17px #5d1515 inset,
+    10px 25px 32px 25px #400b0b inset;
+}
+.rockBtn {
+  height: 5.5rem;
+  width: 5.5rem;
+  border-radius: 50%;
+  margin: 0.75rem;
+  font-size: 1.5rem;
+  background-color: rgb(35, 147, 57);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 0 3px rgb(15, 47, 27), 0 0 0 3px #162c20 inset, 0 0 5px 8px#3f6750 inset,0 0 0 17px #155d29 inset,
+    10px 25px 32px 25px #0b401d inset;
+    /* border: none; */
+}
+.scissorsBtn {
+  height: 5.5rem;
+  width: 5.5rem;
+  border-radius: 50%;
+  margin: 0.75rem;
+  font-size: 1.5rem;
+  background-color: rgb(224, 221, 22);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 0 3px rgb(47, 46, 15), 0 0 0 3px #3f3f13 inset, 0 0 5px 8px#938b38 inset,0 0 0 17px #938906 inset,
+    10px 25px 32px 25px #796f05 inset;
+}
+
+
+
+.chatBox {
+  margin-left: 10rem;
+}
+
+
+/* Chat Design =============================================================== */
+/* .message {
+  background-color: yellow;
+}
+.messageMeta {
+  background-color: red;
+}
+.messageTect {
+  background-color: blue;
+} */
+
+
+.messageInputContainer{
+background-image: linear-gradient(black, rgb(25, 25, 25), black);
+  padding: 2rem;
+  height: 40rem;
+  width: auto;
+  /* padding-top: 40rem; */
+  box-shadow: 4px 4px 4px #fff, 0 0 10px #fff, 0 0 9px #fff,
+    0 0 20px rgb(177, 225, 253), 0 0 80px rgb(148, 202, 244),
+    0 0 30px rgb(95, 158, 236), 0 0 80px rgb(64, 144, 230),
+    0 0 20px rgb(28, 150, 226);
+
+}
+
+.messageInput{
+  background-color: rgb(150, 255, 243);
+  padding: 14px 14px;
+  border-radius: 6px;
+  border: none;
+}
+
+.btn {
+  padding: 14px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: none;
+  background-color: #073b35;
+  color: white;
+}
+
+.formContainer{
+  background-color: white;
+}
+
+.roomSelect {
+  background-color: teal;
+}
 
 /* Responsive design ========================================================= */
 @media (max-width: 900px) {
