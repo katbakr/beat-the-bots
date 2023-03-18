@@ -1,14 +1,33 @@
 import { Component, useState } from "react";
 import { useMutation } from "@apollo/client";
-import Chat from '../chat/Chat.js'
+import Chat from "../chat/Chat.js";
 // import MessageForm from '../chat/MessageForm.js'
 
 export default function Battle({ socket }) {
-    const [botChoice, setBotChocie] = useState("Rock");
-    const [userChoice, setUserChoice] = useState("");
-    const [winner, setWinner] = useState("");
+  const [botChoice, setBotChocie] = useState("Rock");
+  const [userChoice, setUserChoice] = useState("PAPER");
+  const [winner, setWinner] = useState("No Wins");
+  // code for taking user data and the pass to Bot utils?
+  //need a query and mutation for passing results to user in database, and getting win streak
+  const checkWinner = async (botChoice, userChoice) => {
+    if (
+      (userChoice === "PAPER" && botChoice === "ROCK") ||
+      (userChoice === "SCISSORS" && botChoice === "PAPER") ||
+      (userChoice === "ROCK" && botChoice === "SCISSORS")
+    ) {
+      setWinner("Player Wins");
+    } else {
+      setWinner("Robot Wins");
+    }
+  };
 
-    const checkWinner = () => {};
+  const handleClick = async (e) => {
+    e.preventDefault();
+
+    setUserChoice(e.target.value);
+
+    checkWinner(botChoice, userChoice);
+  };
 
 // Kat Code =======================================================================================================================
     return (
