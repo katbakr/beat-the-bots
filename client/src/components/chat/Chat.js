@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import MessageForm from './MessageForm';
+// import MessageForm from './MessageForm';
 
 /*
 required props:
@@ -13,6 +13,8 @@ const Chat = ({ username, room, socket }) => {
 
    // set up array to store message history state
    const [messagesReceived, setMessagesReceived] = useState([]);
+
+   const [message, setMessage] = useState('');
 
    // ref acceses the DOM element for autoscroll
    // CAN REMOVE IF DOESNT INTEGRATE WELL
@@ -42,6 +44,19 @@ const Chat = ({ username, room, socket }) => {
 
    }, [socket]);
 
+   const sendMessage = () => {
+      // require message to have text
+      if (message !== '') {
+
+         console.log({ username, room, message });
+         // send message tu server. cant specify who to send it to
+         // server will receive message and send it to all users in room including sender
+         socket.emit('send_message', { username, room, message });
+         // reset message textbox to empty
+         setMessage('');
+      }
+   };
+
    // scroll to most recent message whenever we get a new one
    useEffect(() => {
       messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
@@ -59,7 +74,19 @@ const Chat = ({ username, room, socket }) => {
                </div>
             ))}
          </div>
-         <MessageForm username={username} room={room} socket={socket} />
+         <div className='messageInputContainer'>
+            <input
+               className='messageInput'
+               placeholder='Message...'
+               onChange={(e) => setMessage(e.target.value)}
+            />
+            <button
+               className='btn'
+               onClick={sendMessage}
+            >
+               Send
+            </button>
+         </div>
       </div>
    );
 };
