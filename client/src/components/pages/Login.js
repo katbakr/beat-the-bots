@@ -3,6 +3,7 @@ import { useMutation } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { LOGIN } from "../../utils/mutations";
 import Auth from "../../utils/auth";
+import './battle.css'
 
 function Login(props) {
 	const [formState, setFormState] = useState({ username: "", password: "" });
@@ -34,41 +35,62 @@ function Login(props) {
 	};
 
 	return (
-		<div className="container my-1">
-			<Link to="/signup">← Go to Signup</Link>
+		<div className="loginContainer">
 
-			<h2>Login</h2>
-			<form onSubmit={handleFormSubmit}>
-				<div className="flex-row space-between my-2">
-					<label htmlFor="username">username:</label>
-					<input
-						placeholder="Billy BotKiller"
-						name="username"
-						type="text"
-						id="username"
-						onChange={handleChange}
-					/>
-				</div>
-				<div className="flex-row space-between my-2">
-					<label htmlFor="pwd">Password:</label>
-					<input
-						placeholder="******"
-						name="password"
-						type="password"
-						id="pwd"
-						onChange={handleChange}
-					/>
-				</div>
-				{error ? (
-					<div>
-						<p className="error-text">The provided credentials are incorrect</p>
+			<div>
+				<h2 className="lsTitle">Login</h2>
+				<form onSubmit={handleFormSubmit}>
+					<div className="formContainer">
+						<div className="inputContainer">
+							<label className='inputLabel' htmlFor="username">Username: </label>
+							<input className="inputBox"
+								placeholder="Billy BotKiller"
+								name="username"
+								type="text"
+								id="username"
+								onChange={handleChange}
+							/>
+						</div>
+						<div className="inputContainer">
+							<label className='inputLabel' htmlFor="pwd">Password: </label>
+							<input className="inputBox"
+								placeholder="******"
+								name="password"
+								type="password"
+								id="pwd"
+								onChange={handleChange}
+							/>
+						</div>
 					</div>
-				) : null}
-				<div className="flex-row flex-end">
-					<button type="submit">Submit</button>
-				</div>
-			</form>
-		</div>
+					{error ? (
+						<div>
+							<p className="error-text">The provided credentials are incorrect</p>
+						</div>
+					) : null}
+					<div className="loginBtns">
+						<div>
+							<button type="submit" className="toOther" id='loginSubmit'>
+								<span></span>
+								<span></span>
+								<span></span>
+								<span></span> Sumbit
+							</button>
+						</div>
+						<div>
+							<Link to="/Signup">
+								<button className="toOther" id='loginSubmit'>
+									Create Account
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+								</button>
+							</Link>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div >
 	);
 }
 
