@@ -3,7 +3,7 @@ import { useMutation } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { LOGIN } from "../../utils/mutations";
 import Auth from "../../utils/auth";
-import './battle.css'
+// import './battle.css'
 
 function Login(props) {
 	const [formState, setFormState] = useState({ username: "", password: "" });
@@ -67,7 +67,7 @@ function Login(props) {
 							<p className="error-text">The provided credentials are incorrect</p>
 						</div>
 					) : null}
-					<div className="loginBtns">
+					<div className="navBtns">
 						<div>
 							<button type="submit" className="toOther" id='loginSubmit'>
 								<span></span>
