@@ -14,6 +14,7 @@ import Login from "./components/pages/Login";
 import Signup from "./components/pages/Signup";
 import Battle from "./components/pages/Battle";
 import Bye from "./components/pages/Bye";
+import Dashboard from "./components/pages/Dashboard";
 
 import io from 'socket.io-client';
 // connect to SERVER port
@@ -40,6 +41,7 @@ const client = new ApolloClient({
 
 function App() {
   return (
+
     <div  className="base">
       <div className='gameBox'>
         <div className='displayBox'>
@@ -56,7 +58,7 @@ function App() {
           </ApolloProvider>
         </div>
       </div>
-    </div>
+  </div>
   );
 }
 
