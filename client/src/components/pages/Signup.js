@@ -29,35 +29,54 @@ function Signup(props) {
   };
 
   return (
-    <div className="container my-1">
-      <Link to="/login">← Go to Login</Link>
-
-      <h2>Signup</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="username">Username:</label>
-          <input
-            placeholder="username"
-            name="username"
-            type="username"
-            id="username"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
-          <input
-            placeholder="******"
-            name="password"
-            type="password"
-            id="pwd"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+    <div className="signupContainer">
+      <div>
+        <h2 className="suTitle">Signup</h2>
+        <form onSubmit={handleFormSubmit}>
+          <div className="suFormContainer">
+            <div className="inputContainer">
+              <label className='suInputLabel' htmlFor="username">Username: </label>
+              <input className="suInputBox"
+                placeholder="username"
+                name="username"
+                type="username"
+                id="username"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="inputContainer">
+              <label className='suInputLabel' htmlFor="pwd">Password: </label>
+              <input className="suInputBox"
+                placeholder="******"
+                name="password"
+                type="password"
+                id="pwd"
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+          <div className="navBtns">
+            <button type="submit" className="toOther" id='suBtn'>
+            Sumbit
+              {/* <span></span>
+              <span></span>
+              <span></span>
+              <span></span>  */}
+            </button>
+            <div>
+              <Link to="/Login">
+                <button className="toOther" id='suBtn'>
+                  Already have an Account?
+                  {/* <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span> */}
+                </button>
+              </Link>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

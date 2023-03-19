@@ -1,14 +1,13 @@
 /* App.js ========================================================= */
-.layout {
-  height: 100vh;
-  background-color: #000016;
-}
+
 
 /* Home.js ======================================================= */
 .base {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
+  background-color: #000016;
 }
 
 .gameBox {
@@ -19,7 +18,8 @@
     0 0 40px rgb(177, 225, 253), 0 0 80px rgb(148, 202, 244),
     0 0 50px rgb(95, 158, 236), 0 0 80px rgb(64, 144, 230),
     0 0 40px rgb(28, 150, 226);
-  margin: 2rem;
+  border-radius: 8%;
+    margin: 2rem;
   background: linear-gradient(#000000, #0f1a35, #000000);
 }
 
@@ -27,7 +27,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 10rem;
+  padding-top: 4rem;
 }
 
 .homeTitle {
@@ -39,7 +39,7 @@
   font-size: 6rem;
   text-align: center;
   margin: 1rem;
-  color: #77c3d8;
+  color: #a8ddec;
   text-shadow: 0 0 7px #b5c5c9, 0 0 10px #505050, 0 0 21px #fff,
     0 0 42px rgb(0, 166, 255), 0 0 82px rgb(0, 162, 255),
     0 0 92px rgb(0, 162, 255), 0 0 102px rgb(0, 166, 255),
@@ -133,6 +133,127 @@ img {
   color: white;
 
 } */
+
+/* Login Page ================================================================ */
+.loginContainer {
+  margin-top: 2rem;
+  padding: 5rem 8rem 8rem 8rem;
+  -webkit-box-shadow:0px 0px 34px 15px rgba(161, 46, 255, 0.74);
+  -moz-box-shadow: 0px 0px 44px 15px rgba(182, 46, 255, 0.74);
+  box-shadow: 0px 0px 44px 6px rgba(171, 46, 255, 0.74), 0px 0px 34px 6px rgba(133, 46, 255, 0.74) inset;
+  border: solid 4px rgba(228, 204, 255, 0.74);
+  border-radius: 8%;
+  background-color: #040f29;
+  display: flex;
+}
+
+.toOther {
+  margin: .5rem;
+  padding: .75rem;
+  color:white;
+  background-color: #0f1a35;
+  border: none;
+  border-radius: 2%;
+  cursor: pointer;
+}
+
+.lsTitle{
+  text-shadow: 0 0 7px #49267d, 0 0 10px #3d1354, 0 0 21px #221629,
+  0 0 42px rgb(132, 0, 255), 0 0 82px rgb(140, 0, 255),
+  0 0 62px rgb(149, 0, 255), 0 0 82px rgb(166, 0, 255),
+  0 0 151px rgb(136, 0, 255);
+  padding: .5rem;
+  font-size: 3rem;
+  color: #dcc0ff;
+  border-bottom: solid 2px rgb(197, 116, 255);
+  margin: 1.5rem;
+}
+
+.formContainer{
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+}
+
+.inputContainer{
+  padding: .5rem
+}
+
+.inputLabel {
+  color: rgb(224, 186, 255);
+  font-size: 1.75rem;
+}
+
+.inputBox{
+border: none;
+padding: 0.5rem;
+border-radius: 5rem;
+border: solid 2px rgb(201, 154, 255);
+}
+
+#loginSubmit{
+  background-color: #000000;
+  border-radius: .5rem;
+  color: #ce8cf2;
+  border: solid .5px #ce8cf2;
+  margin: 1rem;
+}
+
+.navBtns{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+/* Signup Container ========================================================== */
+.signupContainer {
+  margin-top: 2rem;
+  padding: 5rem 8rem 8rem 8rem;
+  -webkit-box-shadow:0px 0px 34px 15px rgba(46, 245, 255, 0.74);
+  -moz-box-shadow: 0px 0px 44px 15px rgba(46, 255, 252, 0.74);
+  box-shadow: 0px 0px 44px 6px rgba(46, 248, 255, 0.74), 0px 0px 34px 6px rgba(46, 255, 248, 0.74) inset;
+  border: solid 4px rgba(204, 253, 255, 0.74);
+  border-radius: 8%;
+  background-color: #040f29;
+  display: flex;
+}
+
+.suTitle{
+  text-shadow: 0 0 7px #267d7a, 0 0 10px #135054, 0 0 21px #162929,
+  0 0 42px rgb(0, 247, 255), 0 0 82px rgb(0, 255, 255),
+  0 0 62px rgb(0, 255, 255), 0 0 82px rgb(0, 247, 255),
+  0 0 151px rgb(0, 251, 255);
+  padding: .5rem;
+  font-size: 3rem;
+  color: #c0fdff;
+  border-bottom: solid 2px rgb(177, 247, 252);
+  margin: 1.5rem;
+}
+
+/* .suFormContainer {
+  
+} */
+
+.suInputBox {
+border: none;
+padding: 0.5rem;
+border-radius: 5rem;
+border: solid 2px rgb(154, 248, 255);
+}
+
+.suInputLabel {
+  color: rgb(186, 245, 255);
+  font-size: 1.75rem;
+}
+
+#suBtn{
+   background-color: #000000;
+  border-radius: .5rem;
+  color: #8ce3f2;
+  border: solid .5px #8ce6f2;
+  margin: 1rem;
+}
+
 /* Battle Page================================================================ */
 #display {
   display: flex;
@@ -191,6 +312,11 @@ img {
   0 0 92px rgb(0, 145, 255), 0 0 102px rgb(0, 136, 255),
   0 0 151px rgb(0, 149, 255);
   color: rgb(177, 210, 246);
+
+  box-shadow: 4px 4px 4px #fff, 0 0 10px #fff, 0 0 9px #fff,
+  0 0 20px rgb(177, 225, 253), 0 0 80px rgb(148, 202, 244),
+  0 0 30px rgb(95, 158, 236), 0 0 80px rgb(64, 144, 230),
+  0 0 20px rgb(28, 150, 226);
 }
 .userChoices {
   display: flex;
@@ -321,19 +447,26 @@ padding: 6rem;
   color: white;
 }
 
-.formContainer{
-  background-color: white;
-}
 
 .roomSelect {
   background-color: teal;
 }
 
 /* Responsive design ========================================================= */
+@media (max-width: 1200px) {
+  .displayBox {
+padding: 2rem;
+  }
+  .gameBox{
+    height: 95vh;
+    width: 95vw;
+  }
+}
 @media (max-width: 900px) {
   .displayBox {
 padding: 2rem;
   }
+
 }
 
 @media (max-width: 550px) {
@@ -343,6 +476,10 @@ padding: 2rem;
 
   .displayBox h3 {
     margin: 2rem;
+  }
+
+  .loginContainer{
+    padding: 1rem 0 2rem;
   }
 }
 
@@ -368,4 +505,13 @@ padding: 2rem;
         height: 100vh;
         width: 100vw;
       }
+    }
+
+@media (max-width: 375px) {
+      .displayBox {
+    padding:0;
+    height: 100vh;
+    width: 100vw;
+      }
+      
     }
