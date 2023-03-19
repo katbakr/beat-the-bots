@@ -41,20 +41,24 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <div className="layout">
-      <ApolloProvider client={client}>
-        <Router>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/dashboard" element={<Dashboard socket={socket} />} />
-            <Route path="/battle" element={<Battle socket={socket} />} />
-            <Route path="*" element={<Bye />} />
-          </Routes>
-        </Router>
-      </ApolloProvider>
-    </div>
+
+    <div  className="base">
+      <div className='gameBox'>
+        <div className='displayBox'>
+          <ApolloProvider client={client}>
+            <Router>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/battle" element={<Battle socket={socket} />} />
+                <Route path="*" element={<Bye />} />
+              </Routes>
+            </Router>
+          </ApolloProvider>
+        </div>
+      </div>
+  </div>
   );
 }
 
