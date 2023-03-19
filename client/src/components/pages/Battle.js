@@ -5,16 +5,17 @@ import Chat from "../chat/Chat.js";
 // import './battle.css'
 
 export default function Battle({ socket }) {
-  const [botChoice, setBotChocie] = useState("Rock");
-  const [userChoice, setUserChoice] = useState("PAPER");
-  const [winner, setWinner] = useState("No Wins");
-  // code for taking user data and the pass to Bot utils?
+  const [botChoice, setBotChoice] = useState("ROCK");
+  const [userChoice, setUserChoice] = useState("");
+  const [winner, setWinner] = useState("No Winner");
+
   //need a query and mutation for passing results to user in database, and getting win streak
-  const checkWinner = async (botChoice, userChoice) => {
+
+  const checkWinner = () => {
     if (
       (userChoice === "PAPER" && botChoice === "ROCK") ||
-      (userChoice === "SCISSORS" && botChoice === "PAPER") ||
-      (userChoice === "ROCK" && botChoice === "SCISSORS")
+      (userChoice === "ROCK" && botChoice === "SCISSORS") ||
+      (userChoice === "SCISSORS" && botChoice === "PAPER")
     ) {
       setWinner("Player Wins");
     } else {
@@ -24,8 +25,9 @@ export default function Battle({ socket }) {
 
   const handleClick = async (choice) => {
     setUserChoice(choice);
+    const result = checkWinner();
 
-    checkWinner(botChoice, userChoice);
+    checkWinner(result);
   };
 
   // Kat Code =======================================================================================================================
@@ -53,8 +55,10 @@ export default function Battle({ socket }) {
                   <div className="btn1">
                     <button
                       className="rockBtn"
-                      onClick={() => handleClick("Rock")}
-                    ></button>
+                      onClick={() => handleClick("ROCK")}
+                    >
+                      R
+                    </button>
                   </div>
                 </div>
                 <div className="choice" id="btn2">
@@ -63,7 +67,9 @@ export default function Battle({ socket }) {
                     <button
                       className="paperBtn"
                       onClick={() => handleClick("PAPER")}
-                    ></button>
+                    >
+                      P
+                    </button>
                   </div>
                 </div>
                 <div className="choice">
@@ -72,18 +78,22 @@ export default function Battle({ socket }) {
                     <button
                       className="scissorsBtn"
                       onClick={() => handleClick("SCISSORS")}
-                    ></button>
+                    >
+                      S
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
             <div className="chatBox">
               <Chat socket={socket} username="horseTeeth" room="room 1" />
-            </div>
-            <div style={{ display: "flex", color: "white" }}>
-              <p>{userChoice}</p>
-              <p>{botChoice}</p>
-              <p>{winner}</p>
+              <div
+                style={{ display: "flex", color: "white", paddingTop: "100px" }}
+              >
+                <p>Player chose: {userChoice}</p>
+                <p>Bot chose: {botChoice}</p>
+                <p>The Winner is: {winner}</p>
+              </div>
             </div>
           </div>
         </div>

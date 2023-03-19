@@ -16,7 +16,7 @@ import Battle from "./components/pages/Battle";
 import Bye from "./components/pages/Bye";
 import Dashboard from "./components/pages/Dashboard";
 
-import io from 'socket.io-client';
+import io from "socket.io-client";
 // connect to SERVER port
 const socket = io();
 
