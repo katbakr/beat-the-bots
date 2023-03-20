@@ -1,4 +1,4 @@
-button {
+.button {
     position: relative;
     padding: 1em 1.8em;
     outline: none;
@@ -15,16 +15,16 @@ button {
     font-weight: bold;
 }
 
-button:hover {
+.button:hover {
     box-shadow: 0 0 10px #ae00ff, 0 0 25px #001eff, 0 0 50px #ae00ff;
     transition-delay: 0.6s;
 }
 
-button span {
+.button span {
     position: absolute;
 }
 
-button span:nth-child(1) {
+.button span:nth-child(1) {
     top: 0;
     left: -100%;
     width: 100%;
@@ -32,12 +32,12 @@ button span:nth-child(1) {
     background: linear-gradient(90deg, transparent, #ae00ff);
 }
 
-button:hover span:nth-child(1) {
+.button:hover span:nth-child(1) {
     left: 100%;
     transition: 0.7s;
 }
 
-button span:nth-child(3) {
+.button span:nth-child(3) {
     bottom: 0;
     right: -100%;
     width: 100%;
@@ -45,13 +45,13 @@ button span:nth-child(3) {
     background: linear-gradient(90deg, transparent, #001eff);
 }
 
-button:hover span:nth-child(3) {
+.button:hover span:nth-child(3) {
     right: 100%;
     transition: 0.7s;
     transition-delay: 0.35s;
 }
 
-button span:nth-child(2) {
+.button span:nth-child(2) {
     top: -100%;
     right: 0;
     width: 2px;
@@ -59,13 +59,13 @@ button span:nth-child(2) {
     background: linear-gradient(180deg, transparent, #ae00ff);
 }
 
-button:hover span:nth-child(2) {
+.button:hover span:nth-child(2) {
     top: 100%;
     transition: 0.7s;
     transition-delay: 0.17s;
 }
 
-button span:nth-child(4) {
+.button span:nth-child(4) {
     bottom: -100%;
     left: 0;
     width: 2px;
@@ -73,13 +73,13 @@ button span:nth-child(4) {
     background: linear-gradient(360deg, transparent, #001eff);
 }
 
-button:hover span:nth-child(4) {
+.button:hover span:nth-child(4) {
     bottom: 100%;
     transition: 0.7s;
     transition-delay: 0.52s;
 }
 
-button:active {
+.button:active {
     background: #ae00af;
     background: linear-gradient(to top right, #ae00af, #001eff);
     color: #bfbfbf;
@@ -87,13 +87,13 @@ button:active {
     transition: 0.1s;
 }
 
-button:active span:nth-child(1) span:nth-child(2) span:nth-child(2) span:nth-child(2) {
+.button:active span:nth-child(1) span:nth-child(2) span:nth-child(2) span:nth-child(2) {
     transition: none;
     transition-delay: none;
 }
 
-/* new button */
-.btn {
+/* new .button */
+/* .btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -259,4 +259,4 @@ strong {
         transform: scale(0.75);
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
-}
+} */
