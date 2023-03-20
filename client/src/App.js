@@ -16,9 +16,7 @@ import Battle from "./components/pages/Battle";
 import Bye from "./components/pages/Bye";
 import Dashboard from "./components/pages/Dashboard";
 
-import io from "socket.io-client";
 // connect to SERVER port
-const socket = io();
 
 const httpLink = createHttpLink({
 	uri: "/graphql",
@@ -49,7 +47,7 @@ function App() {
 							<Routes>
 								<Route
 									path="/"
-									element={<Home />}
+									element={<Home/>}
 								/>
 								<Route
 									path="/login"
@@ -61,7 +59,7 @@ function App() {
 								/>
 								<Route
 									path="/battle"
-									element={<Battle socket={socket} />}
+									element={<Battle/>}
 								/>
 								<Route
 									path="/dashboard"
