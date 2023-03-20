@@ -4,11 +4,12 @@ import { Link } from "react-router-dom";
 
 function Bye() {
 	return (
-		<div className="gameBox">
+		<div className="byeContainer">
 			{" "}
 			<div>
-				<h1 className="homeTitle">Hey!</h1>
-				<h3>Thank you for your playing!</h3>
+				<h1 className="byeTitle">GAME OVER</h1>
+				<div className="underline"></div>
+				<h3 id="byeH3">Thank you for your playing!</h3>
 			</div>
 		</div>
 	);

@@ -64,7 +64,7 @@ const Chat = ({ username, room, socket }) => {
 
    return (
       <div>
-         <div className='messagesContainer' ref={messagesContainerRef}>
+         <div className='messagesContainer' id='visible-scrollbar' ref={messagesContainerRef}>
             {/*  */}
             {messagesReceived.map((msg, i) => (
                <div className='message' key={i}>
