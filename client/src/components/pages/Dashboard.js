@@ -22,9 +22,10 @@ export default function Dashboard({ username, room, setRoom, socket }) {
    }
 
    return (
-      <div className="base">
+      <div>
+      {/* <div className="base">
          <div className='gameBox'>
-            <div className='displayBox'>
+            <div className='displayBox'> */}
                <h1 className='homeTitle'> Hi {username}</h1>
 
                <div className='formContainer'>
@@ -42,8 +43,9 @@ export default function Dashboard({ username, room, setRoom, socket }) {
                      Join Room
                   </button>
                </div>
-            </div>
+            {/* </div>
          </div>
+      </div> */}
       </div>
    );
 }

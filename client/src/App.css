@@ -39,7 +39,7 @@
   font-size: 6rem;
   text-align: center;
   margin: 1rem;
-  color: #a8ddec;
+  color: #bdeaf6;
   text-shadow: 0 0 7px #b5c5c9, 0 0 10px #505050, 0 0 21px #fff,
     0 0 42px rgb(0, 166, 255), 0 0 82px rgb(0, 162, 255),
     0 0 92px rgb(0, 162, 255), 0 0 102px rgb(0, 166, 255),
@@ -61,6 +61,7 @@
 .navBtnContainer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btnOut1 {
@@ -290,7 +291,7 @@ border: solid 2px rgb(154, 248, 255);
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 8rem;
+  /* margin-right: 12rem; */
 }
 
 .botImg{
@@ -300,9 +301,10 @@ border: solid 2px rgb(154, 248, 255);
     0 0 20px rgb(28, 150, 226);
     margin: 2rem;
 }
+
 .botImg img {
   margin: 0;
-  width: 28rem;
+  width: 20rem;
   height: auto;
 }
 
@@ -312,15 +314,19 @@ border: solid 2px rgb(154, 248, 255);
   0 0 92px rgb(0, 145, 255), 0 0 102px rgb(0, 136, 255),
   0 0 151px rgb(0, 149, 255);
   color: rgb(177, 210, 246);
-
-  box-shadow: 4px 4px 4px #fff, 0 0 10px #fff, 0 0 9px #fff,
+  /* box-shadow: 4px 4px 4px #fff, 0 0 10px #fff, 0 0 9px #fff,
   0 0 20px rgb(177, 225, 253), 0 0 80px rgb(148, 202, 244),
   0 0 30px rgb(95, 158, 236), 0 0 80px rgb(64, 144, 230),
-  0 0 20px rgb(28, 150, 226);
+  0 0 20px rgb(28, 150, 226); */
+font-size: 1.5rem;
 }
+
 .userChoices {
   display: flex;
+  padding: 0;
+  margin: 0;
 }
+
 .choice {
   display: flex;
   flex-direction: column;
@@ -333,7 +339,8 @@ border: solid 2px rgb(154, 248, 255);
   height: auto;
 }
 
-.btn1 {
+/* Button choice 2 */
+/* .btn1 {
   height: 7rem;
   width: 7rem;
   border-radius: 50%;
@@ -380,7 +387,7 @@ border: solid 2px rgb(154, 248, 255);
   box-shadow: 0 0 0 3px rgb(15, 47, 27), 0 0 0 3px #162c20 inset, 0 0 5px 8px#3f6750 inset,0 0 0 17px #155d29 inset,
     10px 25px 32px 25px #0b401d inset;
     /* border: none; */
-}
+/* }
 .scissorsBtn {
   height: 5.5rem;
   width: 5.5rem;
@@ -392,13 +399,80 @@ border: solid 2px rgb(154, 248, 255);
   cursor: pointer;
   box-shadow: 0 0 0 3px rgb(47, 46, 15), 0 0 0 3px #3f3f13 inset, 0 0 5px 8px#938b38 inset,0 0 0 17px #938906 inset,
     10px 25px 32px 25px #796f05 inset;
+} */
+
+.userChoices{
+  padding: 2rem;
 }
 
+#rockBtn2{
+background-color: black;
+border: solid 1px rgb(67, 242, 255);
+color: rgb(67, 242, 255);
+margin: .5rem;
+font-size: 1.25rem;
+}
 
+#paperBtn2{
+  background-color: black;
+  border: solid 1px rgb(246, 150, 255);
+  color: rgb(251, 136, 255);
+  margin: .5rem;
+  font-size: 1.25rem;
+}
+
+#scissorsBtn2{
+  background-color: black;
+  border: solid 1px rgb(109, 57, 253);
+  color: rgb(148, 60, 255);
+  margin: .5rem;
+  font-size: 1.25rem;
+}
+
+.gameStats{
+  color: rgb(67, 0, 144);
+  width: 25rem;
+  height: 10rem;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ border: solid 2px white;
+ border-radius: 10%;
+ box-shadow: 4px 4px 4px #fff, 0 0 10px #fff, 0 0 9px #fff,
+ 0 0 20px rgb(226, 244, 255), 0 0 80px rgb(204, 233, 255),
+ 0 0 30px rgb(163, 204, 255), 0 0 80px rgb(116, 183, 255),
+ 0 0 20px rgb(93, 193, 255), 4px 4px 4px #fff inset, 0 0 10px #fff inset, 0 0 9px #fff inset,
+ 0 0 70px rgb(226, 244, 255) inset;
+  background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255), rgb(255, 255, 255));
+}
+
+.rightColumn{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 12rem;
+}
+
+.gameStats h1{
+  font-weight: 800;
+  border-bottom: solid 4px rgb(67, 0, 144);
+  margin: 1rem;
+}
+
+.gameStats p{
+  display: flex;
+
+}
 
 .chatBox {
-  margin-left: 10rem;
+  /* margin-left: 10rem; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
+
+
 
 
 /* Chat Design =============================================================== */
@@ -412,8 +486,12 @@ border: solid 2px rgb(154, 248, 255);
   background-color: blue;
 } */
 .messagesContainer {
-  background-color: pink;
+background: linear-gradient(rgb(56, 43, 104), rgb(20, 22, 46));
 padding: 6rem;
+box-shadow: 4px 4px 4px #fff, 0 0 10px #fff, 0 0 9px #fff,
+    0 0 20px rgb(177, 225, 253), 0 0 80px rgb(148, 202, 244),
+    0 0 30px rgb(95, 158, 236), 0 0 80px rgb(64, 144, 230),
+    0 0 20px rgb(28, 150, 226);
 }
 
 .messageInputContainer{
@@ -422,18 +500,16 @@ padding: 6rem;
   height: 40rem;
   width: auto; */
   /* padding-top: 40rem; */
-  box-shadow: 4px 4px 4px #fff, 0 0 10px #fff, 0 0 9px #fff,
-    0 0 20px rgb(177, 225, 253), 0 0 80px rgb(148, 202, 244),
-    0 0 30px rgb(95, 158, 236), 0 0 80px rgb(64, 144, 230),
-    0 0 20px rgb(28, 150, 226);
-
+  display: flex;
+  height: 3rem;
 }
 
 .messageInput{
-  background-color: rgb(150, 255, 243);
+  background-color: rgb(13, 9, 23);
   padding: 14px 14px;
   border-radius: 6px;
   border: none;
+  color: white;
 }
 
 .btn {
@@ -443,10 +519,17 @@ padding: 6rem;
   font-size: 1.1rem;
   cursor: pointer;
   border: none;
-  background-color: #073b35;
-  color: white;
+  background-color: #3b2765;
+  color: rgb(197, 172, 255);
 }
 
+.messageMeta{
+  background-color: #7a639f;
+}
+
+.messageText {
+  color: white;
+}
 
 .roomSelect {
   background-color: teal;
