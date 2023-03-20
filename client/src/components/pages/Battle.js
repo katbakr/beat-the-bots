@@ -2,8 +2,11 @@ import { Component, useState, useEffect } from "react";
 import { useMutation } from "@apollo/client";
 import Chat from "../chat/Chat.js";
 import './battle.css';
+import io from "socket.io-client";
 
-export default function Battle({ socket }) {
+const socket = io();
+
+export default function Battle({ username }) {
 	const [botChoice, setBotChoice] = useState("ROCK");
 	const [userChoice, setUserChoice] = useState("");
 	const [winnerState, setWinnerState] = useState("No Winner Yet");
@@ -20,6 +23,10 @@ export default function Battle({ socket }) {
 		}
 	};
 
+	useEffect(() => {
+		socket.emit('join_room', { username, room: 'Public' });
+	}, [])
+
 	//this says "re-run the checkWinner() function every time either userChoice or botChoice changes"
 	useEffect(() => {
 		checkWinner();
@@ -28,6 +35,7 @@ export default function Battle({ socket }) {
 	const handleClick = (choice) => {
 		setUserChoice(choice);
 	};
+
 	return (
 		// <div className="base">
 		<div
@@ -123,8 +131,8 @@ export default function Battle({ socket }) {
 						<div className="chatBox">
 							<Chat
 								socket={socket}
-								username="horseTeeth"
-								room="room 1"
+								username={username}
+								room="Public"
 							/>
 
 						</div>
