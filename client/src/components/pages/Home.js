@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function Home() {
 
 	// const [room, setRoom] = useState('');
-	console.log(Auth);
+	// console.log(Auth);
 	//if user is logged in, go to the dashboard
 	if (Auth.loggedIn()) {
 		return (
