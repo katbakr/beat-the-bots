@@ -1,16 +1,19 @@
 import { Component, useState, useEffect } from "react";
 import { useMutation } from "@apollo/client";
 import Chat from "../chat/Chat.js";
+import { useLocation } from 'react-router-dom';
 
 import "./battle.css";
 import io from "socket.io-client";
 
 const socket = io();
 
-export default function Battle({ username }) {
+export default function Battle() {
   const [botChoice, setBotChoice] = useState("");
   const [userChoice, setUserChoice] = useState("");
   const [winnerState, setWinnerState] = useState("No Winner Yet");
+  const location = useLocation();
+  const { username } = location.state;
 
   const checkWinner = () => {
     if (
