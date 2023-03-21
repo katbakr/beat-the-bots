@@ -1,7 +1,5 @@
 //going to need to pull in hooks/add event listeners
 
-const choices = ["ROCK", "PAPER", "SCISSORS"];
-
 const bot1 = (e) => {
   e.preventDefualt();
 
@@ -67,7 +65,11 @@ const bot4 = (e) => {
 
 const bot5 = (e) => {
   e.preventDefualt();
-  const botChoice = () => {};
+  const botChoice = () => {
+    const choices = ["ROCK", "PAPER", "SCISSORS"];
+    const index = choices.indexOf(computerChoice);
+    computerChoice = choices[(index + 1) % choices.length];
+  };
   const humanChoice = (e) => {
     return e.target.value();
   };

@@ -80,10 +80,8 @@ function Login(props) {
 					) : null}
 					<div className="navBtns">
 						<div>
-							<button
-								type="submit"
-								className="toOther"
-								id="loginSubmit">
+
+							<button type="submit" className="button" id='loginSubmit'>
 								<span></span>
 								<span></span>
 								<span></span>
@@ -92,9 +90,7 @@ function Login(props) {
 						</div>
 						<div>
 							<Link to="/Signup">
-								<button
-									className="toOther"
-									id="loginSubmit">
+								<button className="button" id='loginSubmit'>
 									Create Account
 									<span></span>
 									<span></span>

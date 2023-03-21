@@ -30,7 +30,7 @@ const SendMessage = ({ username, room, socket }) => {
             onChange={(e) => setMessage(e.target.value)}
          />
          <button
-            className='btn'
+            className='chatBtn'
             onClick={sendMessage}
          >
             Send
