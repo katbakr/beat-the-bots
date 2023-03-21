@@ -36,14 +36,18 @@ function Login(props) {
 
 	return (
 		<div className="loginContainer">
-
 			<div>
 				<h2 className="lsTitle">Login</h2>
 				<form onSubmit={handleFormSubmit}>
 					<div className="formContainer">
 						<div className="inputContainer">
-							<label className='inputLabel' htmlFor="username">Username: </label>
-							<input className="inputBox"
+							<label
+								className="inputLabel"
+								htmlFor="username">
+								Username:{" "}
+							</label>
+							<input
+								className="inputBox"
 								placeholder="Billy BotKiller"
 								name="username"
 								type="text"
@@ -52,8 +56,13 @@ function Login(props) {
 							/>
 						</div>
 						<div className="inputContainer">
-							<label className='inputLabel' htmlFor="pwd">Password: </label>
-							<input className="inputBox"
+							<label
+								className="inputLabel"
+								htmlFor="pwd">
+								Password:{" "}
+							</label>
+							<input
+								className="inputBox"
 								placeholder="******"
 								name="password"
 								type="password"
@@ -64,16 +73,19 @@ function Login(props) {
 					</div>
 					{error ? (
 						<div>
-							<p className="error-text">The provided credentials are incorrect</p>
+							<p className="error-text">
+								The provided credentials are incorrect
+							</p>
 						</div>
 					) : null}
 					<div className="navBtns">
 						<div>
+
 							<button type="submit" className="button" id='loginSubmit'>
 								<span></span>
 								<span></span>
 								<span></span>
-								<span></span> Sumbit
+								<span></span> Submit
 							</button>
 						</div>
 						<div>
@@ -90,7 +102,7 @@ function Login(props) {
 					</div>
 				</form>
 			</div>
-		</div >
+		</div>
 	);
 }
 
