@@ -9,35 +9,40 @@ const levelData = [
 		levelName: "Level1",
 		isLocked: false,
 		isDefeated: false,
-		roundHistory: [],
+		// roundHistory: [],
+		roundHistory: "asdf",
 	},
 	{
 		levelId: 2,
 		levelName: "Level2",
 		isLocked: true,
 		isDefeated: false,
-		roundHistory: [],
+		// roundHistory: [],
+		roundHistory: "asdf",
 	},
 	{
 		levelId: 3,
 		levelName: "Level3",
 		isLocked: true,
 		isDefeated: false,
-		roundHistory: [],
+		// roundHistory: [],
+		roundHistory: "asdf",
 	},
 	{
 		levelId: 4,
 		levelName: "Level4",
 		isLocked: true,
 		isDefeated: false,
-		roundHistory: [],
+		//roundHistory: [],
+		roundHistory: "asdf",
 	},
 	{
 		levelId: 5,
 		levelName: "Level5",
 		isLocked: true,
 		isDefeated: false,
-		roundHistory: [],
+		// roundHistory: [],
+		roundHistory: "asdf",
 	},
 ];
 
@@ -92,6 +97,24 @@ const resolvers = {
 			const token = signToken(user);
 			console.log("the token and user are ", token, user);
 			return { token, user };
+		},
+		//create a mutation for roundHistory
+		// define the updateRoundHistory resolver function with the mutation arguments. This mutation name and arguments will appear in the apollo sandbox.
+		updateRoundHistory: async (parent, { userId, levelId, roundHistory }) => {
+			try {
+				const userData = await User.findOneAndUpdate(
+					//finds the exact level (user, and level)
+					{ "levels._id": levelId },
+					//we want to set the value of roundHistory in the levels array
+					{ $set: { "levels.$.roundHistory": roundHistory } },
+					{ new: true }
+				);
+				return userData;
+			} catch (err) {
+				// Log any errors and throw a new error with a more user-friendly message
+				console.log(err);
+				throw new Error("Error updating round history");
+			}
 		},
 	},
 };
