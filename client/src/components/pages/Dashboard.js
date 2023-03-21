@@ -40,7 +40,6 @@ export default function Dashboard({ username }) {
                </li>
             </ol>
          </div>
-
          <div className='formContainer'>
             {/* <select
                className='roomSelect'
@@ -49,7 +48,7 @@ export default function Dashboard({ username }) {
                <option>--select a room--</option>
                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (<option value={`Room ${i}`} key={i}>{`Room ${i}`}</option>))}
             </select> */}
-            <Link to='/battle' username={username}>
+            <Link to='/battle' state={{ username: username }}>
                <button
                   className='dashboardBtn'
                >

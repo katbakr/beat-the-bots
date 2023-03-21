@@ -23,3 +23,15 @@ export const ADD_USER = gql`
 		}
 	}
 `;
+
+export const UPDATE_ROUND_HISTORY = gql`
+  mutation updateRoundHistory($userId: ID!, $levelId: ID!, $roundHistory: String) {
+    updateRoundHistory(userId: $userId, levelId: $levelId, roundHistory: $roundHistory) {
+      _id
+      username
+      levels {
+        roundHistory
+      }
+    }
+  }
+`;

@@ -1,16 +1,20 @@
 import { Component, useState, useEffect } from "react";
 import { useMutation } from "@apollo/client";
 import Chat from "../chat/Chat.js";
+import { useLocation } from 'react-router-dom';
 
 import "./battle.css";
 import io from "socket.io-client";
 
 const socket = io();
 
-export default function Battle({ username }) {
+export default function Battle() {
   const [botChoice, setBotChoice] = useState("");
   const [userChoice, setUserChoice] = useState("");
   const [winnerState, setWinnerState] = useState("No Winner Yet");
+  const [count, setCount] = useState(0);
+  const location = useLocation();
+  const { username } = location.state;
 
   const checkWinner = () => {
     if (
@@ -19,8 +23,10 @@ export default function Battle({ username }) {
       (userChoice === "SCISSORS" && botChoice === "PAPER")
     ) {
       setWinnerState("Player Wins");
+      setCount(count + 1);
     } else {
       setWinnerState("Robot Wins");
+      setCount(0);
     }
   };
 
@@ -141,6 +147,7 @@ export default function Battle({ username }) {
               <p>Player chose: {userChoice}</p>
               <p>Bot chose: {botChoice}</p>
               <p>The Winner is: {winnerState}</p>
+              <p>Your Consecutive: {count}</p>
             </div>
             <div className="chatBox">
               <Chat socket={socket} username={username} room="Public" />

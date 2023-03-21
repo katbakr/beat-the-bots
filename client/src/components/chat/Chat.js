@@ -53,8 +53,8 @@ const Chat = ({ username, room, socket }) => {
          // server will receive message and send it to all users in room including sender
          socket.emit('send_message', { username, room, message });
          // reset message textbox to empty
-         setMessage('');
       }
+      setMessage('');
    };
 
    // scroll to most recent message whenever we get a new one
@@ -79,6 +79,7 @@ const Chat = ({ username, room, socket }) => {
                className='messageInput'
                placeholder='Message...'
                onChange={(e) => setMessage(e.target.value)}
+               value={message}
             />
             <button
                className='btn'
