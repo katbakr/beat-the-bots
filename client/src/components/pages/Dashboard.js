@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Auth from "../../utils/auth";
 // import RoomJoinForm from "../chat/RoomJoinForm";
 
 export default function Dashboard({ username }) {
 
-   username = 'junk username';
+   // console.log(Auth.getProfile());
+
+   username = Auth.getProfile().data.username;
    // [room, setRoom] = useState('');
 
    // const navigate = useNavigate();
