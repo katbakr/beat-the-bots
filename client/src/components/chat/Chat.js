@@ -26,7 +26,7 @@ const Chat = ({ username, room, socket }) => {
       // server data format: { message: String, username: String }
       socket.on('receive_message', (data) => {
 
-         console.log(data); // for debug
+         // console.log(data); // for debug
 
          // adds newly received message to the end of the messagesReceived array
          setMessagesReceived((state) => [
