@@ -12,6 +12,7 @@ export default function Battle() {
   const [botChoice, setBotChoice] = useState("");
   const [userChoice, setUserChoice] = useState("");
   const [winnerState, setWinnerState] = useState("No Winner Yet");
+  const [count, setCount] = useState(0);
   const location = useLocation();
   const { username } = location.state;
 
@@ -22,8 +23,10 @@ export default function Battle() {
       (userChoice === "SCISSORS" && botChoice === "PAPER")
     ) {
       setWinnerState("Player Wins");
+      setCount(count + 1);
     } else {
       setWinnerState("Robot Wins");
+      setCount(0);
     }
   };
 
@@ -144,6 +147,7 @@ export default function Battle() {
               <p>Player chose: {userChoice}</p>
               <p>Bot chose: {botChoice}</p>
               <p>The Winner is: {winnerState}</p>
+              <p>Your Consecutive: {count}</p>
             </div>
             <div className="chatBox">
               <Chat socket={socket} username={username} room="Public" />
