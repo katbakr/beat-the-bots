@@ -1,7 +1,7 @@
 import { Component, useState, useEffect } from "react";
 import { useMutation } from "@apollo/client";
 import Chat from "../chat/Chat.js";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 import "./battle.css";
 import io from "socket.io-client";
@@ -30,6 +30,39 @@ export default function Battle() {
     }
   };
 
+  const pickABot = (botLogicChoice) => {
+    if ("bot3") {
+      const messages = [
+        "I'm definetly throwing scissors next!",
+        "",
+        "There's no way you will win this round!",
+        "",
+        "I'll win this round for sure!",
+        "",
+        "Can you guess what I'm gonna play?",
+        "",
+        "Better luck next time!",
+        "",
+      ];
+      const random = messages[Math.floor(Math.random() * messages.length)];
+      if (random === "") {
+        setBotChoice("PAPER");
+      } else {
+        setBotChoice("SCISSORS");
+      }
+    } else if ("bot2") {
+      const choices = ["ROCK", "PAPER", "SCISSORS"];
+      function getRandomChoice() {
+        return choices[Math.floor(Math.random() * choices.length)];
+      }
+      const index = choices.indexOf(botChoice || getRandomChoice());
+      const botChoiceIndex = choices[(index + 1) % choices.length];
+      setBotChoice(botChoiceIndex);
+    } else {
+      setBotChoice("ROCK");
+    }
+  };
+
   useEffect(() => {
     socket.emit("join_room", { username, room: "Public" });
   }, []);
@@ -40,14 +73,7 @@ export default function Battle() {
   }, [userChoice, botChoice]);
 
   const handleClick = (choice) => {
-    const choices = ["ROCK", "PAPER", "SCISSORS"];
-    function getRandomChoice() {
-      return choices[Math.floor(Math.random() * choices.length)];
-    }
-
-    const index = choices.indexOf(botChoice || getRandomChoice());
-    const botChoiceIndex = choices[(index + 1) % choices.length];
-    setBotChoice(botChoiceIndex);
+    pickABot();
 
     setUserChoice(choice);
   };
@@ -64,7 +90,15 @@ export default function Battle() {
         </div>
         <div className="playContainer">
           <div className="botBox">
-            <div className="botImg">
+            <div
+              className="botImg"
+              onClick={() => {
+                const array = ["bot1", "bot2", "bot3"];
+                const botLogicChoice =
+                  array[Math.floor(Math.random() * array.length)];
+                pickABot(botLogicChoice);
+              }}
+            >
               <img src="./assets/bot1.png"></img>
             </div>
             <div className="botCard">
