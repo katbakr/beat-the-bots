@@ -29,7 +29,8 @@ export default function Battle() {
       setCount(0);
     }
   };
-
+  //take the bot picked by the click on the image.
+  //then use that to decide which logic the bot will use for the rock/paper/scissors clicks.
   const pickABot = (botLogicChoice) => {
     if ("bot3") {
       const messages = [
@@ -93,6 +94,7 @@ export default function Battle() {
             <div
               className="botImg"
               onClick={() => {
+                //randomly pick a bot to pass to the pickABot function
                 const array = ["bot1", "bot2", "bot3"];
                 const botLogicChoice =
                   array[Math.floor(Math.random() * array.length)];
