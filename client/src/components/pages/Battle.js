@@ -14,7 +14,7 @@ export default function Battle() {
   const [winnerState, setWinnerState] = useState("No Winner Yet");
   const [count, setCount] = useState(0);
   const location = useLocation();
-  const { username } = location.state;
+  const { username, room } = location.state;
 
   const checkWinner = () => {
     if (
@@ -65,7 +65,7 @@ export default function Battle() {
   };
 
   useEffect(() => {
-    socket.emit("join_room", { username, room: "Public" });
+    socket.emit("join_room", { username, room });
   }, []);
 
   //this says "re-run the checkWinner() function every time either userChoice or botChoice changes"
@@ -88,6 +88,7 @@ export default function Battle() {
       <div>
         <div className="titleContainer">
           <h1 className="battleTitle">Time to Battle!</h1>
+          <h1 className="battleTitle">{room}</h1>
         </div>
         <div className="playContainer">
           <div className="botBox">

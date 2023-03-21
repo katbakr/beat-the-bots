@@ -8,7 +8,7 @@ export default function Dashboard({ username }) {
    // console.log(Auth.getProfile());
 
    username = Auth.getProfile().data.username;
-   // [room, setRoom] = useState('');
+   const [room, setRoom] = useState('');
 
    // const navigate = useNavigate();
 
@@ -44,14 +44,14 @@ export default function Dashboard({ username }) {
             </ol>
          </div>
          <div className='formContainer'>
-            {/* <select
+            <select
                className='roomSelect'
                onChange={(e) => setRoom(e.target.value)}
             >
                <option>--select a room--</option>
                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (<option value={`Room ${i}`} key={i}>{`Room ${i}`}</option>))}
-            </select> */}
-            <Link to='/battle' state={{ username: username }}>
+            </select>
+            <Link to='/battle' state={{ username, room }}>
                <button
                   className='dashboardBtn'
                >
