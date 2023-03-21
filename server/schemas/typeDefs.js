@@ -5,14 +5,16 @@ const typeDefs = `#graphql
       password: String
       levels: [Level]
     }
-    type Level {
-      levelId: Int
-      levelName: String
-      isLocked: Boolean
-      isDefeated: Boolean
-      roundHistory: [String]
-      _id: ID
-    }
+    #Level is a subdocument of User
+      type Level {
+        levelId: Int
+        levelName: String
+        isLocked: Boolean
+        isDefeated: Boolean
+        #roundHistory: [String]
+        roundHistory: String
+        _id: ID
+      }
     
     #trying to set up an auth type to handle returning data from a user login
     type Auth {
@@ -25,11 +27,7 @@ const typeDefs = `#graphql
     user(_id:ID!): User
     }
 
-    #setting up mutation to handle creating a user  or user login and return Auth type instead of User type
-
-    #addUser(username: String!, password: String!): Auth
     
-
     type Query {
       user(_id:ID!): User
       allusers:[User]
@@ -38,6 +36,11 @@ const typeDefs = `#graphql
     type Mutation {  
       addUser(username: String!, password: String!): Auth
       login(username: String!, password: String!): Auth
+      #updateRoundHistory takes three arguments and returns the updated User which includes the updated round history
+        #old# updateRoundHistory(userId: ID!, levelId: ID!, roundHistory: [String]): User
+      #new# lets just have roundHistory be a string of rounds separated by commas, an example round would be bot plays roc, human plays paper win:H = bRhPwH
+      updateRoundHistory(userId: ID!, levelId: ID!, roundHistory: String): User
+
     }
 `;
 
