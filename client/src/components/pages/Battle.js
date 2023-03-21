@@ -187,7 +187,7 @@ export default function Battle() {
               <p>Your Consecutive: {count}</p>
             </div>
             <div className="chatBox">
-              <Chat socket={socket} username={username} room="Public" />
+              <Chat socket={socket} username={username} room={room} />
             </div>
           </div>
         </div>
