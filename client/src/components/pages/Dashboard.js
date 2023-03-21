@@ -22,24 +22,24 @@ export default function Dashboard({ username }) {
          {/* <div className="base">
          <div className='gameBox'>
             <div className='displayBox'> */}
-         <h1 className='homeTitle'> Hi {username}</h1>
-         <h1 className="ruleTitle">How to Play:</h1>
-         <ol className="ruleList">
-            <li className="rule">
-               Enter a room with your team
-            </li>
-            <li className="rule">
-               Select Rock, Paper, or Scissors and see how the bot responds!
-            </li>
-            <li className="rule">
-               Be sure to use the chat to communicate with your teammates and find out the bot's rule.
-            </li>
-            <li className="rule">
-               Beat the bot 5 times consecutively to move to the next round.
-            </li>
-         </ol>
-
-
+         <h1 className='dashboardTitle'> Hi {username}</h1>
+         <div className="rules">
+            <h1 className="ruleTitle">How to Play:</h1>
+            <ol className="ruleList">
+               <li className="rule">
+                  Enter a room with your team
+               </li>
+               <li className="rule">
+                  Select Rock, Paper, or Scissors and see how the bot responds!
+               </li>
+               <li className="rule">
+                  Be sure to use the chat to communicate with your teammates to find out the bot's rule.
+               </li>
+               <li className="rule">
+                  Beat the bot 5 times consecutively to move to the next round.
+               </li>
+            </ol>
+         </div>
          <div className='formContainer'>
             {/* <select
                className='roomSelect'

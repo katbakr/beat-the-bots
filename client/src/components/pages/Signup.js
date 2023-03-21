@@ -56,13 +56,15 @@ function Signup(props) {
             </div>
           </div>
           <div className="navBtns">
-            <button type="submit" className="button" id='suBtn'>
-            Sumbit
-              {/* <span></span>
+            <Link to="/Dashboard">
+              <button type="submit" className="button" id='suBtn'>
+                Submit
+                {/* <span></span>
               <span></span>
               <span></span>
               <span></span>  */}
-            </button>
+              </button>
+            </Link>
             <div>
               <Link to="/Login">
                 <button className="button" id='suBtn'>
