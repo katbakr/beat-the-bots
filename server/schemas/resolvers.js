@@ -100,13 +100,16 @@ const resolvers = {
 		},
 		//create a mutation for roundHistory
 		// define the updateRoundHistory resolver function with the mutation arguments. This mutation name and arguments will appear in the apollo sandbox.
-		updateRoundHistory: async (parent, { userId, levelId, roundHistory }) => {
+		updateRoundHistory: async (parent, { levelId, roundHistory }, context) => {
 			try {
+				console.log(context);
 				const userData = await User.findOneAndUpdate(
 					//finds the exact level (user, and level)
-					{ "levels._id": levelId },
-					//we want to set the value of roundHistory in the levels array
-					{ $set: { "levels.$.roundHistory": roundHistory } },
+					//finding the user, not the level, finding the user by the id number, which we get from the context
+					//find user by id, inside there, level fields, and specific level
+					{ _id: context.user._id, "levels.levelId": levelId },
+					//add , given levelId, look in level, find roundHistory, add new roundHistory which was given above
+					{ $addToSet: { levels: { roundHistory: roundHistory } } },
 					{ new: true }
 				);
 				return userData;

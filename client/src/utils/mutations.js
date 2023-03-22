@@ -25,13 +25,20 @@ export const ADD_USER = gql`
 `;
 
 export const UPDATE_ROUND_HISTORY = gql`
-  mutation updateRoundHistory($userId: ID!, $levelId: ID!, $roundHistory: String) {
-    updateRoundHistory(userId: $userId, levelId: $levelId, roundHistory: $roundHistory) {
-      _id
-      username
-      levels {
-        roundHistory
-      }
+# example parameters: "levelId": "1",
+  "roundHistory": "bRhPwH",
+mutation UpdateRoundHistory($levelId: ID!, $roundHistory: String) {
+  updateRoundHistory(levelId: $levelId, roundHistory: $roundHistory) {
+    _id
+    username
+    password
+    levels {
+      levelId
+      levelName
+      isLocked
+      isDefeated
+      roundHistory
     }
   }
+}
 `;

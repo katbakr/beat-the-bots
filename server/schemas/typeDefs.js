@@ -11,10 +11,11 @@ const typeDefs = `#graphql
         levelName: String
         isLocked: Boolean
         isDefeated: Boolean
-        #roundHistory: [String]
-        roundHistory: String
+        roundHistory: [String]
         _id: ID
       }
+
+
     
     #trying to set up an auth type to handle returning data from a user login
     type Auth {
@@ -38,8 +39,9 @@ const typeDefs = `#graphql
       login(username: String!, password: String!): Auth
       #updateRoundHistory takes three arguments and returns the updated User which includes the updated round history
         #old# updateRoundHistory(userId: ID!, levelId: ID!, roundHistory: [String]): User
-      #new# lets just have roundHistory be a string of rounds separated by commas, an example round would be bot plays roc, human plays paper win:H = bRhPwH
-      updateRoundHistory(userId: ID!, levelId: ID!, roundHistory: String): User
+      #new# lets just have roundHistory be a string of rounds separated by commas, an example round would be bot plays roc, human plays paper win:H = bRhPwH,bPhRwB
+      #we don't need userId as a parameter, we can get it from context just hand off the level id and new round histroyr
+      updateRoundHistory( levelId: ID!, roundHistory: String): User
 
     }
 `;

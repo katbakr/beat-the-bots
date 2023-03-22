@@ -18,10 +18,7 @@ const levelSchema = new Schema({
 		type: Boolean,
 		required: true,
 	},
-	roundHistory: {
-		type: String,
-		required: true,
-	},
+	roundHistory: [String],
 });
 
 module.exports = levelSchema;
