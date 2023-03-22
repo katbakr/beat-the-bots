@@ -1,0 +1,729 @@
+/* App.js ========================================================= */
+
+/* Home.js ======================================================= */
+.base {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #000016;
+}
+
+.gameBox {
+  height: 93vh;
+  width: 93vw;
+  outline: solid rgb(142, 240, 255) 4px;
+  box-shadow: 4px 4px 4px #fff, 0 0 10px #fff, 0 0 9px #fff,
+    0 0 40px rgb(177, 225, 253), 0 0 80px rgb(148, 202, 244),
+    0 0 50px rgb(95, 158, 236), 0 0 80px rgb(64, 144, 230),
+    0 0 40px rgb(28, 150, 226);
+  border-radius: 8%;
+  margin: 2rem;
+  background: linear-gradient(#000000, #0f1a35, #000000);
+}
+
+.displayBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4rem;
+}
+
+.homeTitle {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  font-size: 6rem;
+  text-align: center;
+  margin: 1rem;
+  color: #bdeaf6;
+  text-shadow: 0 0 7px #b5c5c9, 0 0 10px #505050, 0 0 21px #fff,
+    0 0 42px rgb(0, 166, 255), 0 0 82px rgb(0, 162, 255),
+    0 0 92px rgb(0, 162, 255), 0 0 102px rgb(0, 166, 255),
+    0 0 151px rgb(0, 166, 255);
+  font-family: "Silkscreen", cursive;
+}
+
+.displayBox h3 {
+  color: #c7f0fb;
+  margin: 2rem;
+  margin-top: 8rem;
+  text-shadow: 0 0 7px #cecece, 0 0 10px #505050, 0 0 21px #fff,
+    0 0 42px rgb(0, 157, 255), 0 0 82px rgb(0, 149, 255),
+    0 0 92px rgb(0, 145, 255), 0 0 102px rgb(0, 136, 255),
+    0 0 151px rgb(0, 149, 255);
+  text-align: center;
+}
+
+.navBtnContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btnOut1 {
+  margin: 2rem;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  background-color: rgb(9, 38, 70);
+  box-shadow: 0 0 0 5px #252e4b inset;
+}
+
+.btnOut2 {
+  margin: 2rem;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  background-color: rgb(73, 6, 68);
+  box-shadow: 0 0 0 5px #53284c inset;
+}
+
+.homeBtn1 {
+  height: 8.5rem;
+  width: 8.5rem;
+  border-radius: 50%;
+  margin: 0.75rem;
+  font-size: 1.5rem;
+  background-color: rgb(35, 65, 147);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 0 3px rgb(15, 15, 47), 0 0 0 3px #161b2c inset,
+    0 0 5px 8px#3f4867 inset, 0 0 0 17px #15305d inset,
+    10px 25px 32px 25px #0b2340 inset;
+}
+
+.homeBtn2 {
+  height: 8.5rem;
+  width: 8.5rem;
+  border-radius: 50%;
+  margin: 0.75rem;
+  font-size: 1.5rem;
+  background-color: rgb(138, 35, 147);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 0 3px rgb(44, 15, 47), 0 0 0 3px #27162c inset,
+    0 0 5px 8px#533663 inset, 0 0 0 17px #51155d inset,
+    10px 25px 32px 25px #3e0b40 inset;
+}
+
+.homeBtn1:active {
+  transform: translateY(-2px);
+  background-color: #263150;
+  box-shadow: 0 0 0 6px rgb(15, 15, 47), 0 0 0 6px #161b2c inset,
+    0 0 5px 8px#3b435f inset, 0 0 0 17px #11264b inset,
+    10px 25px 32px 25px #071729 inset;
+}
+
+.homeBtn2:active {
+  transform: translateY(-2px);
+  background-color: rgb(92, 22, 97);
+  box-shadow: 0 0 0 6px rgb(22, 8, 23), 0 0 0 6px #1c1020 inset,
+    0 0 5px 8px#422752 inset, 0 0 0 17px #45114f inset,
+    10px 25px 32px 25px #3e0b40 inset;
+}
+
+img {
+  height: 30rem;
+  margin: 2rem;
+  width: auto;
+}
+
+/* Login Page ================================================================ */
+.loginContainer {
+  margin-top: 2rem;
+  padding: 5rem 8rem 8rem 8rem;
+  -webkit-box-shadow: 0px 0px 34px 15px rgba(161, 46, 255, 0.74);
+  -moz-box-shadow: 0px 0px 44px 15px rgba(182, 46, 255, 0.74);
+  box-shadow: 0px 0px 44px 6px rgba(171, 46, 255, 0.74),
+    0px 0px 34px 6px rgba(133, 46, 255, 0.74) inset;
+  border: solid 4px rgba(228, 204, 255, 0.74);
+  border-radius: 8%;
+  background-color: #040f29;
+  display: flex;
+}
+
+.toOther {
+  margin: 0.5rem;
+  padding: 0.75rem;
+  color: white;
+  background-color: #0f1a35;
+  border: none;
+  border-radius: 2%;
+  cursor: pointer;
+}
+
+.lsTitle {
+  text-shadow: 0 0 7px #49267d, 0 0 10px #3d1354, 0 0 21px #221629,
+    0 0 42px rgb(132, 0, 255), 0 0 82px rgb(140, 0, 255),
+    0 0 62px rgb(149, 0, 255), 0 0 82px rgb(166, 0, 255),
+    0 0 151px rgb(136, 0, 255);
+  padding: 0.5rem;
+  font-size: 3rem;
+  color: #dcc0ff;
+  border-bottom: solid 2px rgb(197, 116, 255);
+  margin: 1.5rem;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.inputContainer {
+  padding: 0.5rem;
+}
+
+.inputLabel {
+  color: rgb(224, 186, 255);
+  font-size: 1.75rem;
+}
+
+.inputBox {
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5rem;
+  border: solid 2px rgb(201, 154, 255);
+}
+
+#loginSubmit {
+  background-color: #000000;
+  border-radius: 0.5rem;
+  color: #ce8cf2;
+  border: solid 0.5px #ce8cf2;
+  margin: 1rem;
+}
+
+.navBtns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Signup Container ========================================================== */
+.signupContainer {
+  margin-top: 2rem;
+  padding: 5rem 8rem 8rem 8rem;
+  -webkit-box-shadow: 0px 0px 34px 15px rgba(46, 245, 255, 0.74);
+  -moz-box-shadow: 0px 0px 44px 15px rgba(46, 255, 252, 0.74);
+  box-shadow: 0px 0px 44px 6px rgba(46, 248, 255, 0.74),
+    0px 0px 34px 6px rgba(46, 255, 248, 0.74) inset;
+  border: solid 4px rgba(204, 253, 255, 0.74);
+  border-radius: 8%;
+  background-color: #040f29;
+  display: flex;
+}
+
+.suTitle {
+  text-shadow: 0 0 7px #267d7a, 0 0 10px #135054, 0 0 21px #162929,
+    0 0 42px rgb(0, 247, 255), 0 0 82px rgb(0, 255, 255),
+    0 0 62px rgb(0, 255, 255), 0 0 82px rgb(0, 247, 255),
+    0 0 151px rgb(0, 251, 255);
+  padding: 0.5rem;
+  font-size: 3rem;
+  color: #c0fdff;
+  border-bottom: solid 2px rgb(177, 247, 252);
+  margin: 1.5rem;
+}
+
+.suInputBox {
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5rem;
+  border: solid 2px rgb(154, 248, 255);
+}
+
+.suInputLabel {
+  color: rgb(186, 245, 255);
+  font-size: 1.75rem;
+}
+
+#suBtn {
+  background-color: #000000;
+  border-radius: 0.5rem;
+  color: #8ce3f2;
+  border: solid 0.5px #8ce6f2;
+  margin: 1rem;
+}
+
+/* Dashboard Page ============================================================ */
+.dashboardTitle {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  font-size: 6rem;
+  text-align: center;
+  margin: 0rem;
+  color: #d5e9ff;
+  text-shadow: 0 0 7px #b5c5c9, 0 0 10px #505050, 0 0 21px #fff,
+    0 0 42px rgb(0, 166, 255), 0 0 82px rgb(0, 162, 255),
+    0 0 92px rgb(0, 162, 255), 0 0 102px rgb(0, 166, 255),
+    0 0 151px rgb(0, 166, 255);
+  font-family: "Silkscreen", cursive;
+}
+
+.byeContainer {
+  padding: 0;
+  margin: 0;
+}
+
+.dashboardBtn {
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #001229;
+  color: #95e8fa;
+  font-weight: 700;
+  border: solid 3px #96eeff;
+  padding: 1rem 4rem 1rem 4rem;
+  /* margin: 2rem; */
+}
+
+.formContainer {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+}
+
+.ruleTitle {
+  color: #c7fbff;
+  font-size: 2rem;
+  margin: 0.5rem;
+}
+
+.rules {
+  border: solid 4px #c7fbff;
+  padding-left: 3rem;
+  padding: 1rem 1.5rem 1.5rem 3rem;
+  border-radius: 3rem;
+  margin-top: 2rem;
+  background: #0a0514;
+}
+
+.ruleList {
+  list-style: number;
+}
+
+.rule {
+  color: #c7fbff;
+  font-size: 1.5rem;
+}
+
+/* Battle Page================================================================ */
+#display {
+  display: flex;
+  justify-content: center;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.battleTitle {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  font-size: 3rem;
+  text-align: center;
+  color: #e5ecee;
+  text-shadow: 0 0 7px #cecece, 0 0 10px #505050, 0 0 21px #fff,
+    0 0 42px rgb(0, 166, 255), 0 0 82px rgb(0, 162, 255),
+    0 0 92px rgb(0, 162, 255), 0 0 102px rgb(0, 166, 255),
+    0 0 151px rgb(0, 166, 255);
+  font-family: "Silkscreen", cursive;
+  margin: 0.5rem;
+}
+
+.playContainer {
+  display: flex;
+}
+
+.botBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-right: 12rem; */
+}
+
+.botImg {
+  box-shadow: 4px 4px 4px #fff, 0 0 10px #fff, 0 0 9px #fff,
+    0 0 20px rgb(177, 225, 253), 0 0 80px rgb(148, 202, 244),
+    0 0 30px rgb(95, 158, 236), 0 0 80px rgb(64, 144, 230),
+    0 0 20px rgb(28, 150, 226);
+  margin: 2rem;
+}
+
+.botImg img {
+  margin: 0;
+  width: 20rem;
+  height: auto;
+}
+
+.botTaunt {
+  text-shadow: 0 0 7px #cecece, 0 0 10px #505050, 0 0 21px #fff,
+    0 0 42px rgb(0, 157, 255), 0 0 82px rgb(0, 149, 255),
+    0 0 92px rgb(0, 145, 255), 0 0 102px rgb(0, 136, 255),
+    0 0 151px rgb(0, 149, 255);
+  color: rgb(177, 210, 246);
+  font-size: 1.5rem;
+}
+
+.userChoices {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.choice img {
+  margin: 0.5rem;
+  width: 8rem;
+  height: auto;
+}
+
+/* Button choice 2 */
+/* .btn1 {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  background-color: rgb(9, 70, 30);
+  box-shadow: 0 0 0 5px #254b34 inset;
+}
+
+.btn2 {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  background-color: rgb(70, 9, 9);
+  box-shadow: 0 0 0 5px #4b2525 inset;
+}
+
+.btn3 {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  background-color: rgb(125, 115, 18);
+  box-shadow: 0 0 0 5px #79713d inset;
+}
+.paperBtn {
+  height: 5.5rem;
+  width: 5.5rem;
+  border-radius: 50%;
+  margin: 0.75rem;
+  font-size: 1.5rem;
+  background-color: rgb(215, 40, 40);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 0 3px rgb(15, 15, 47), 0 0 0 3px #2c1616 inset, 0 0 5px 8px#8d2929 inset,0 0 0 17px #5d1515 inset,
+    10px 25px 32px 25px #400b0b inset;
+}
+.rockBtn {
+  height: 5.5rem;
+  width: 5.5rem;
+  border-radius: 50%;
+  margin: 0.75rem;
+  font-size: 1.5rem;
+  background-color: rgb(35, 147, 57);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 0 3px rgb(15, 47, 27), 0 0 0 3px #162c20 inset, 0 0 5px 8px#3f6750 inset,0 0 0 17px #155d29 inset,
+    10px 25px 32px 25px #0b401d inset;
+    /* border: none; */
+/* }
+.scissorsBtn {
+  height: 5.5rem;
+  width: 5.5rem;
+  border-radius: 50%;
+  margin: 0.75rem;
+  font-size: 1.5rem;
+  background-color: rgb(224, 221, 22);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 0 3px rgb(47, 46, 15), 0 0 0 3px #3f3f13 inset, 0 0 5px 8px#938b38 inset,0 0 0 17px #938906 inset,
+    10px 25px 32px 25px #796f05 inset;
+} */
+
+.userChoices {
+  padding: 2rem;
+}
+
+#rockBtn2 {
+  background-color: black;
+  border: solid 1px rgb(67, 242, 255);
+  color: rgb(67, 242, 255);
+  margin: 0.5rem;
+  font-size: 1.25rem;
+}
+
+#paperBtn2 {
+  background-color: black;
+  border: solid 1px rgb(246, 150, 255);
+  color: rgb(251, 136, 255);
+  margin: 0.5rem;
+  font-size: 1.25rem;
+}
+
+#scissorsBtn2 {
+  background-color: black;
+  border: solid 1px rgb(109, 57, 253);
+  color: rgb(148, 60, 255);
+  margin: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.gameStats {
+  color: rgb(67, 0, 144);
+  width: 25rem;
+  height: 10rem;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 2px white;
+  border-radius: 10%;
+  box-shadow: 4px 4px 4px #fff, 0 0 10px #fff, 0 0 9px #fff,
+    0 0 20px rgb(226, 244, 255), 0 0 80px rgb(204, 233, 255),
+    0 0 30px rgb(163, 204, 255), 0 0 80px rgb(116, 183, 255),
+    0 0 20px rgb(93, 193, 255), 4px 4px 4px #fff inset, 0 0 10px #fff inset,
+    0 0 9px #fff inset, 0 0 70px rgb(226, 244, 255) inset;
+  background: linear-gradient(
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255)
+  );
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 12rem;
+}
+
+.gameStats h1 {
+  font-weight: 800;
+  border-bottom: solid 4px rgb(67, 0, 144);
+  margin: 1rem;
+}
+
+.gameStats p {
+  display: flex;
+}
+
+.chatBox {
+  /* margin-left: 10rem; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-shadow: 4px 4px 4px #fff, 0 0 10px #fff, 0 0 9px #fff,
+    0 0 20px rgb(177, 225, 253), 0 0 80px rgb(148, 202, 244),
+    0 0 30px rgb(95, 158, 236), 0 0 80px rgb(64, 144, 230),
+    0 0 20px rgb(28, 150, 226);
+  border-radius: 10px;
+}
+
+/* Chat Design =============================================================== */
+.messagesContainer {
+  background: linear-gradient(rgb(56, 43, 104), rgb(20, 22, 46));
+  padding: 6rem 1.5rem 6rem 1.5rem;
+  width: 25rem;
+  height: 16rem;
+  border-radius: 10px;
+}
+
+#visible-scrollbar {
+  display: block;
+  overflow: auto;
+  /* height: 2em; */
+}
+
+.messageInputContainer {
+  /* background-image: linear-gradient(black, rgb(25, 25, 25), black);
+  padding: 2rem;
+  height: 40rem;
+  width: auto; */
+  /* padding-top: 40rem; */
+  display: flex;
+  height: 3rem;
+}
+
+.messageInput {
+  background-color: rgb(13, 9, 23);
+  padding: 0rem 6rem 0rem 2rem;
+  margin-right: 0rem;
+  border-radius: 6px;
+  border: solid 3px rgb(135, 111, 164);
+  color: rgb(215, 208, 255);
+}
+
+.btn {
+  padding: 14px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: none;
+  background-color: #3b2765;
+  color: rgb(197, 172, 255);
+  border: solid 2px rgb(135, 111, 164);
+}
+
+.btn:active {
+  border: solid 2px rgb(222, 193, 255);
+  color: rgb(222, 193, 255);
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}
+.messageMeta {
+  color: #ffffff;
+}
+
+.messageText {
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.message {
+  background-color: #4c3a7b;
+  padding: 1rem 1rem 0 1rem;
+  border: solid 1px rgb(155, 100, 218);
+  border-radius: 1rem;
+  margin: 1rem 0 1rem 0;
+}
+
+.roomSelect {
+  background-color: teal;
+}
+
+/* BYE PAGE ===================================================================*/
+.byeContainer {
+  padding-top: 10rem;
+}
+
+.byeTitle {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  font-size: 6rem;
+  text-align: center;
+  margin: 1rem;
+  color: #072954;
+  text-shadow: 0 0 7px #a4e3f3, 0 0 10px #9fc5ff, 0 0 21px #fff,
+    0 0 42px rgb(0, 119, 255), 0 0 82px rgb(0, 85, 255),
+    0 0 92px rgb(0, 106, 255), 0 0 102px rgb(0, 119, 255),
+    0 0 151px rgb(0, 132, 255);
+  font-family: "Silkscreen", cursive;
+}
+
+.underline {
+  margin: 4rem;
+  width: 60rem;
+  border-bottom: solid 8px rgb(11, 42, 78);
+  box-shadow: 4px 4px 4px #fff, 0 0 10px #fff, 0 0 19px #fff,
+    0 0 120px rgb(177, 225, 253), 0 0 180px rgb(148, 202, 244),
+    0 0 130px rgb(95, 158, 236), 0 0 180px rgb(64, 144, 230),
+    0 0 120px rgb(28, 150, 226), 4px 4px 4px #fff inset, 0 0 10px #fff inset,
+    0 0 19px #fff inset, 0 0 120px rgb(177, 225, 253) inset,
+    0 0 180px rgb(148, 202, 244) inset, 0 0 130px rgb(95, 158, 236) inset,
+    0 0 180px rgb(64, 144, 230) inset, 0 0 120px rgb(28, 150, 226) inset;
+}
+
+#byeH3 {
+  font-size: 2rem;
+  color: #c2d9ff;
+}
+
+/* Responsive design ========================================================= */
+@media (max-width: 1200px) {
+  .displayBox {
+    padding: 2rem;
+  }
+  .gameBox {
+    height: 95vh;
+    width: 95vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .displayBox {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .displayBox {
+    padding: 1rem;
+  }
+
+  .displayBox h3 {
+    margin: 2rem;
+  }
+
+  .loginContainer {
+    padding: 1rem 0 2rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .btnOut1 {
+    margin: 0.25rem;
+  }
+  .btnOut2 {
+    margin: 0.25rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .displayBox {
+    padding: 0rem;
+  }
+  .navBtnContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .landingPage {
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+@media (max-width: 375px) {
+  .displayBox {
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+}
