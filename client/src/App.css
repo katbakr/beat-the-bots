@@ -250,12 +250,29 @@ img {
 }
 
 /* Dashboard Page ============================================================ */
+.dashboardTitle {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  font-size: 6rem;
+  text-align: center;
+  margin: 0rem;
+  color: #d5e9ff;
+  text-shadow: 0 0 7px #b5c5c9, 0 0 10px #505050, 0 0 21px #fff,
+    0 0 42px rgb(0, 166, 255), 0 0 82px rgb(0, 162, 255),
+    0 0 92px rgb(0, 162, 255), 0 0 102px rgb(0, 166, 255),
+    0 0 151px rgb(0, 166, 255);
+  font-family: "Silkscreen", cursive;
+}
+
 .byeContainer {
   padding: 0;
   margin: 0;
 }
 
-.dashboardBtn{
+.dashboardBtn {
   padding: 1rem;
   border-radius: 10px;
   background-color: #001229;
@@ -263,7 +280,7 @@ img {
   font-weight: 700;
   border: solid 3px #96eeff;
   padding: 1rem 4rem 1rem 4rem;
-  margin: 2rem;
+  /* margin: 2rem; */
 }
 
 .formContainer {
@@ -273,7 +290,18 @@ img {
 }
 
 .ruleTitle {
-color: white;
+  color: #c7fbff;
+  font-size: 2rem;
+  margin: 0.5rem;
+}
+
+.rules {
+  border: solid 4px #c7fbff;
+  padding-left: 3rem;
+  padding: 1rem 1.5rem 1.5rem 3rem;
+  border-radius: 3rem;
+  margin-top: 2rem;
+  background: #0a0514;
 }
 
 .ruleList {
@@ -281,7 +309,8 @@ color: white;
 }
 
 .rule {
-  color: white;
+  color: #c7fbff;
+  font-size: 1.5rem;
 }
 
 /* Battle Page================================================================ */
@@ -596,7 +625,7 @@ color: white;
   background-color: teal;
 }
 
-/* BYE PAGE */
+/* BYE PAGE ===================================================================*/
 .byeContainer {
   padding-top: 10rem;
 }

@@ -9,142 +9,149 @@ import io from "socket.io-client";
 const socket = io();
 
 export default function Battle() {
-  const [botChoice, setBotChoice] = useState("");
-  const [userChoice, setUserChoice] = useState("");
-  const [winnerState, setWinnerState] = useState("No Winner Yet");
-  const [count, setCount] = useState(0);
-  const location = useLocation();
-  const { username } = location.state;
+	const [botChoice, setBotChoice] = useState("");
+	const [userChoice, setUserChoice] = useState("");
+	const [winnerState, setWinnerState] = useState("No Winner Yet");
+	const [count, setCount] = useState(0);
+	const location = useLocation();
+	const { username, room } = location.state;
 
-  const checkWinner = () => {
-    if (
-      (userChoice === "PAPER" && botChoice === "ROCK") ||
-      (userChoice === "ROCK" && botChoice === "SCISSORS") ||
-      (userChoice === "SCISSORS" && botChoice === "PAPER")
-    ) {
-      setWinnerState("Player Wins");
-      setCount(count + 1);
-    } else {
-      setWinnerState("Robot Wins");
-      setCount(0);
-    }
-  };
-  //take the bot picked by the click on the image.
-  //then use that to decide which logic the bot will use for the rock/paper/scissors clicks.
-  const pickABot = (botLogicChoice) => {
-    if ("bot3") {
-      const messages = [
-        "I'm definetly throwing scissors next!",
-        "",
-        "There's no way you will win this round!",
-        "",
-        "I'll win this round for sure!",
-        "",
-        "Can you guess what I'm gonna play?",
-        "",
-        "Better luck next time!",
-        "",
-      ];
-      const random = messages[Math.floor(Math.random() * messages.length)];
-      if (random === "") {
-        setBotChoice("PAPER");
-      } else {
-        setBotChoice("SCISSORS");
-      }
-    } else if ("bot2") {
-      const choices = ["ROCK", "PAPER", "SCISSORS"];
-      function getRandomChoice() {
-        return choices[Math.floor(Math.random() * choices.length)];
-      }
-      const index = choices.indexOf(botChoice || getRandomChoice());
-      const botChoiceIndex = choices[(index + 1) % choices.length];
-      setBotChoice(botChoiceIndex);
-    } else {
-      setBotChoice("ROCK");
-    }
-  };
+	const checkWinner = () => {
+		if (
+			(userChoice === "PAPER" && botChoice === "ROCK") ||
+			(userChoice === "ROCK" && botChoice === "SCISSORS") ||
+			(userChoice === "SCISSORS" && botChoice === "PAPER")
+		) {
+			setWinnerState("Player Wins");
+			setCount(count + 1);
+		} else if (
+			(userChoice === "PAPER" && botChoice === "PAPER") ||
+			(userChoice === "ROCK" && botChoice === "ROCK") ||
+			(userChoice === "SCISSORS" && botChoice === "SCISSORS")
+		) {
+			setWinnerState("You Tied!");
+			setCount(0);
+		} else {
+			setWinnerState("Robot Wins");
+			setCount(0);
+		}
+	};
+	//take the bot picked by the click on the image.
+	//then use that to decide which logic the bot will use for the rock/paper/scissors clicks.
+	const pickABot = (botLogicChoice) => {
+		if ("bot3") {
+			const messages = [
+				"I'm definetly throwing scissors next!",
+				"",
+				"There's no way you will win this round!",
+				"",
+				"I'll win this round for sure!",
+				"",
+				"Can you guess what I'm gonna play?",
+				"",
+				"Better luck next time!",
+				"",
+			];
+			const random = messages[Math.floor(Math.random() * messages.length)];
+			if (random === "") {
+				setBotChoice("PAPER");
+			} else {
+				setBotChoice("SCISSORS");
+			}
+		} else if ("bot2") {
+			const choices = ["ROCK", "PAPER", "SCISSORS"];
+			function getRandomChoice() {
+				return choices[Math.floor(Math.random() * choices.length)];
+			}
+			const index = choices.indexOf(botChoice || getRandomChoice());
+			const botChoiceIndex = choices[(index + 1) % choices.length];
+			setBotChoice(botChoiceIndex);
+		} else {
+			setBotChoice("ROCK");
+		}
+	};
 
-  useEffect(() => {
-    socket.emit("join_room", { username, room: "Public" });
-  }, []);
+	useEffect(() => {
+		socket.emit("join_room", { username, room });
+	}, []);
 
-  //this says "re-run the checkWinner() function every time either userChoice or botChoice changes"
-  useEffect(() => {
-    checkWinner();
-  }, [userChoice, botChoice]);
+	//this says "re-run the checkWinner() function every time either userChoice or botChoice changes"
+	useEffect(() => {
+		checkWinner();
+	}, [userChoice, botChoice]);
 
-  const handleClick = (choice) => {
-    pickABot();
+	const handleClick = (choice) => {
+		pickABot();
 
-    setUserChoice(choice);
-  };
+		setUserChoice(choice);
+	};
 
-  return (
-    // <div className="base">
-    <div
-    // className="gameBox"
-    // id="display"
-    >
-      <div>
-        <div className="titleContainer">
-          <h1 className="battleTitle">Time to Battle!</h1>
-        </div>
-        <div className="playContainer">
-          <div className="botBox">
-            <div
-              className="botImg"
-              onClick={() => {
-                //randomly pick a bot to pass to the pickABot function
-                const array = ["bot1", "bot2", "bot3"];
-                const botLogicChoice =
-                  array[Math.floor(Math.random() * array.length)];
-                pickABot(botLogicChoice);
-              }}
-            >
-              <img src="./assets/bot1.png"></img>
-            </div>
-            <div className="botCard">
-              <h4 className="botTaunt">
-                I love rocks. Aren't rocks the coolest?
-              </h4>
-            </div>
-            <div className="userChoices">
-              <div className="choice">
-                {/* <img src="./assets/rock.png"></img> */}
-                {/* <div className="btn1"> */}
-                <button
-                  className="button"
-                  id="rockBtn2"
-                  onClick={() => handleClick("ROCK")}
-                >
-                  ROCK
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </button>
+	return (
+		// <div className="base">
+		<div
+		// className="gameBox"
+		// id="display"
+		>
+			<div>
+				<div className="titleContainer">
+					<h1 className="battleTitle">Time to Battle!</h1>
+					<h1 className="battleTitle">{room}</h1>
+				</div>
+				<div className="playContainer">
+					<div className="botBox">
+						<div
+							className="botImg"
+							onClick={() => {
+								//randomly pick a bot to pass to the pickABot function
+								const array = ["bot1", "bot2", "bot3"];
+								const botLogicChoice =
+									array[Math.floor(Math.random() * array.length)];
+								pickABot(botLogicChoice);
+							}}>
+							<img src="./assets/bot1.png"></img>
+						</div>
+						<div className="botCard">
+							<h4 className="botTaunt">
+								I love rocks. Aren't rocks the coolest?
+							</h4>
+						</div>
+						<div className="userChoices">
+							<div className="choice">
+								{/* <img src="./assets/rock.png"></img> */}
+								{/* <div className="btn1"> */}
+								<button
+									className="button"
+									id="rockBtn2"
+									onClick={() => handleClick("ROCK")}>
+									ROCK
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+								</button>
 
-                {/* <button
+								{/* <button
 											className="rockBtn"
 											onClick={() => handleClick("ROCK")}>
 											Ro
 										</button> */}
-                {/* </div> */}
-              </div>
-              <div className="choice" id="btn2">
-                <button
-                  className="button"
-                  id="paperBtn2"
-                  onClick={() => handleClick("PAPER")}
-                >
-                  PAPER
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </button>
+								{/* </div> */}
+							</div>
+							<div
+								className="choice"
+								id="btn2">
+								<button
+									className="button"
+									id="paperBtn2"
+									onClick={() => handleClick("PAPER")}>
+									PAPER
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+								</button>
 
-                {/* <img src="./assets/paper.png"></img>
+								{/* <img src="./assets/paper.png"></img>
 									<div className="btn2">
 										<button
 											className="paperBtn"
@@ -152,21 +159,20 @@ export default function Battle() {
 											Pa
 										</button>
 									</div> */}
-              </div>
-              <div className="choice">
-                <button
-                  className="button"
-                  id="scissorsBtn2"
-                  onClick={() => handleClick("SCISSORS")}
-                >
-                  Scissors
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </button>
+							</div>
+							<div className="choice">
+								<button
+									className="button"
+									id="scissorsBtn2"
+									onClick={() => handleClick("SCISSORS")}>
+									Scissors
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+								</button>
 
-                {/* <img src="./assets/scissors.png"></img>
+								{/* <img src="./assets/scissors.png"></img>
 									<div className="btn3">
 										<button
 											className="scissorsBtn"
@@ -174,24 +180,28 @@ export default function Battle() {
 											Sc
 										</button>
 									</div> */}
-              </div>
-            </div>
-          </div>
-          <div className="rightColumn">
-            <div className="gameStats">
-              <h1>Round Results</h1>
-              <p>Player chose: {userChoice}</p>
-              <p>Bot chose: {botChoice}</p>
-              <p>The Winner is: {winnerState}</p>
-              <p>Your Consecutive: {count}</p>
-            </div>
-            <div className="chatBox">
-              <Chat socket={socket} username={username} room="Public" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    // </div>
-  );
+							</div>
+						</div>
+					</div>
+					<div className="rightColumn">
+						<div className="gameStats">
+							<h1>Round Results</h1>
+							<p>Player chose: {userChoice}</p>
+							<p>Bot chose: {botChoice}</p>
+							<p>The Winner is: {winnerState}</p>
+							<p>Consecutive wins: {count}</p>
+						</div>
+						<div className="chatBox">
+							<Chat
+								socket={socket}
+								username={username}
+								room={room}
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		// </div>
+	);
 }

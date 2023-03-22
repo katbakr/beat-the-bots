@@ -5,6 +5,7 @@ const { ApolloServerPluginDrainHttpServer } = require("@apollo/server/plugin/dra
 const http = require("http");
 const cors = require('cors');
 const socketio = require('socket.io');
+require('dotenv').config();
 
 
 //gets the auth utility
@@ -14,7 +15,7 @@ const { typeDefs, resolvers } = require("./schemas");
 const db = require("./config/connection");
 
 const PORT = process.env.PORT || 3001;
-const SOCKETPORT = process.env.SOCKETPORT || 4000;
+// const SOCKETPORT = process.env.SOCKETPORT || 4000;
 
 const app = express(cors()); // needs cors middleware for socket.io to work
 const httpServer = http.createServer(app);
@@ -29,7 +30,7 @@ const server = new ApolloServer({
 // create a socket.io server and allow CORS
 const io = new socketio.Server(httpServer, {
 	cors: {
-		origin: SOCKETPORT,
+		origin: PORT,
 		methods: ['GET', 'POST'],
 	},
 });
