@@ -1,5 +1,5 @@
 import { Component, useState, useEffect } from "react";
-import { useMutation } from "@apollo/client";
+//import { useMutation } from "@apollo/client";
 import Chat from "../chat/Chat.js";
 import { useLocation } from "react-router-dom";
 
@@ -14,7 +14,7 @@ export default function Battle() {
 	const [winnerState, setWinnerState] = useState("No Winner Yet");
 	const [count, setCount] = useState(0);
 	const [botLevel, setBotLevel] = useState("./assets/bot1.png");
-
+	const [turn, setTurn] = useState(0);
 	const location = useLocation();
 	const { username, room } = location.state;
 
@@ -87,23 +87,29 @@ export default function Battle() {
 		socket.emit("join_room", { username, room });
 	}, []);
 
-	//this says "re-run the checkWinner() function every time either userChoice or botChoice changes"
+	//this says "re-run the checkWinner() function every time turn changes"
 	useEffect(() => {
 		checkWinner();
-	}, [userChoice, botChoice]);
+	}, [turn]);
 
+	//choosing the level
 	const handleClick = (choice) => {
-		//if the botLevel state is the bot1.png, then run bot1 function
+		//if the botLevel state is the bot1.png, then fight bot1
 		if (botLevel === "./assets/bot1.png") {
 			bot1();
+			//if the botLevel state is bot2.png, then fight bot2
 		} else if (botLevel === "./assets/botbot.png") {
 			bot2();
+			//if the botLevel state is bot3.png, then fight bot3
 		} else if (botLevel === "./assets/dragonbot.png") {
 			bot3();
+			//otherwise fight bot4
 		} else {
 			bot4();
 		}
 		setUserChoice(choice);
+		//after every turn, no matter what bot, and whether or not userChoice or botChoice actuallly updated, update turn to ensure that Checkwinner runs
+		setTurn(turn + 1);
 	};
 
 	return (
