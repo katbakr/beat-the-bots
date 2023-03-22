@@ -89,7 +89,7 @@ function Login(props) {
 							</button>
 						</div>
 						<div>
-							<Link to="/Signup">
+							<Link to="/signup">
 								<button className="button" id='loginSubmit'>
 									Create Account
 									<span></span>

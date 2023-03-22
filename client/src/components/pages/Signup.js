@@ -56,7 +56,6 @@ function Signup(props) {
             </div>
           </div>
           <div className="navBtns">
-            <Link to="/Dashboard">
               <button type="submit" className="button" id='suBtn'>
                 Submit
                 {/* <span></span>
@@ -64,9 +63,8 @@ function Signup(props) {
               <span></span>
               <span></span>  */}
               </button>
-            </Link>
             <div>
-              <Link to="/Login">
+              <Link to="/login">
                 <button className="button" id='suBtn'>
                   Already have an Account?
                   {/* <span></span>
