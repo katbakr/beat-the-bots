@@ -1,5 +1,5 @@
 import { Component, useState, useEffect } from "react";
-import { useMutation } from "@apollo/client";
+//import { useMutation } from "@apollo/client";
 import Chat from "../chat/Chat.js";
 import { useLocation } from "react-router-dom";
 
@@ -13,6 +13,8 @@ export default function Battle() {
 	const [userChoice, setUserChoice] = useState("");
 	const [winnerState, setWinnerState] = useState("No Winner Yet");
 	const [count, setCount] = useState(0);
+	const [botLevel, setBotLevel] = useState("./assets/bot1.png");
+	const [turn, setTurn] = useState(0);
 	const location = useLocation();
 	const { username, room } = location.state;
 
@@ -36,54 +38,78 @@ export default function Battle() {
 			setCount(0);
 		}
 	};
-	//take the bot picked by the click on the image.
-	//then use that to decide which logic the bot will use for the rock/paper/scissors clicks.
-	const pickABot = (botLogicChoice) => {
-		if ("bot3") {
-			const messages = [
-				"I'm definetly throwing scissors next!",
-				"",
-				"There's no way you will win this round!",
-				"",
-				"I'll win this round for sure!",
-				"",
-				"Can you guess what I'm gonna play?",
-				"",
-				"Better luck next time!",
-				"",
-			];
-			const random = messages[Math.floor(Math.random() * messages.length)];
-			if (random === "") {
-				setBotChoice("PAPER");
-			} else {
-				setBotChoice("SCISSORS");
-			}
-		} else if ("bot2") {
-			const choices = ["ROCK", "PAPER", "SCISSORS"];
-			function getRandomChoice() {
-				return choices[Math.floor(Math.random() * choices.length)];
-			}
-			const index = choices.indexOf(botChoice || getRandomChoice());
-			const botChoiceIndex = choices[(index + 1) % choices.length];
-			setBotChoice(botChoiceIndex);
+	//BOT 3
+	const bot3 = () => {
+		const messages = [
+			"I'm definetly throwing scissors next!",
+			"",
+			"There's no way you will win this round!",
+			"",
+			"I'll win this round for sure!",
+			"",
+			"Can you guess what I'm gonna play?",
+			"",
+			"Better luck next time!",
+			"",
+		];
+		const random = messages[Math.floor(Math.random() * messages.length)];
+		if (random === "") {
+			setBotChoice("PAPER");
 		} else {
-			setBotChoice("ROCK");
+			setBotChoice("SCISSORS");
 		}
 	};
 
+	//BOT 2
+	//random for first throw, then cycles in order
+	const bot2 = () => {
+		const choices = ["ROCK", "PAPER", "SCISSORS"];
+		function getRandomChoice() {
+			return choices[Math.floor(Math.random() * choices.length)];
+		}
+		const index = choices.indexOf(botChoice || getRandomChoice());
+		const botChoiceIndex = choices[(index + 1) % choices.length];
+		setBotChoice(botChoiceIndex);
+	};
+
+	//BOT 1
+	const bot1 = () => {
+		setBotChoice("ROCK");
+	};
+	//-------------------
+
+	//Bot 4
+	const bot4 = () => {
+		setBotChoice(userChoice);
+	};
+	//-------
 	useEffect(() => {
 		socket.emit("join_room", { username, room });
 	}, []);
 
-	//this says "re-run the checkWinner() function every time either userChoice or botChoice changes"
+	//this says "re-run the checkWinner() function every time turn changes"
 	useEffect(() => {
 		checkWinner();
-	}, [userChoice, botChoice]);
+	}, [turn]);
 
+	//choosing the level
 	const handleClick = (choice) => {
-		pickABot();
-
+		//if the botLevel state is the bot1.png, then fight bot1
+		if (botLevel === "./assets/bot1.png") {
+			bot1();
+			//if the botLevel state is bot2.png, then fight bot2
+		} else if (botLevel === "./assets/botbot.png") {
+			bot2();
+			//if the botLevel state is bot3.png, then fight bot3
+		} else if (botLevel === "./assets/dragonbot.png") {
+			bot3();
+			//otherwise fight bot4
+		} else {
+			bot4();
+		}
 		setUserChoice(choice);
+		//after every turn, no matter what bot, and whether or not userChoice or botChoice actuallly updated, update turn to ensure that Checkwinner runs
+		setTurn(turn + 1);
 	};
 
 	return (
@@ -99,18 +125,41 @@ export default function Battle() {
 				</div>
 				<div className="playContainer">
 					<div className="botBox">
-						<div
-							className="botImg"
-							onClick={() => {
-								//randomly pick a bot to pass to the pickABot function
-								const array = ["bot1", "bot2", "bot3"];
-								const botLogicChoice =
-									array[Math.floor(Math.random() * array.length)];
-								pickABot(botLogicChoice);
-							}}>
-							<img src="./assets/bot1.png"></img>
+						<div className="botImg">
+							{/* 	have a robotlevel button and robotlevel state that affect the image, and bot logic						 */}
+							<img src={botLevel}></img>
 						</div>
 						<div className="botCard">
+							<div>
+								<button
+									className="button"
+									onClick={() => {
+										setBotLevel("./assets/bot1.png");
+									}}>
+									Level 1
+								</button>
+								<button
+									className="button"
+									onClick={() => {
+										setBotLevel("./assets/botbot.png");
+									}}>
+									Level 2
+								</button>
+								<button
+									className="button"
+									onClick={() => {
+										setBotLevel("./assets/dragonbot.png");
+									}}>
+									Level 3
+								</button>
+								<button
+									className="button"
+									onClick={() => {
+										setBotLevel("./assets/kidbot.png");
+									}}>
+									Level 4
+								</button>
+							</div>
 							<h4 className="botTaunt">
 								I love rocks. Aren't rocks the coolest?
 							</h4>
