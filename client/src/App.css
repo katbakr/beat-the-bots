@@ -133,7 +133,7 @@ img {
 
 /* Login Page ================================================================ */
 .loginContainer {
-  margin-top: 2rem;
+  margin: 0rem;
   padding: 5rem 8rem 8rem 8rem;
   -webkit-box-shadow: 0px 0px 34px 15px rgba(161, 46, 255, 0.74);
   -moz-box-shadow: 0px 0px 44px 15px rgba(182, 46, 255, 0.74);
@@ -205,7 +205,7 @@ img {
 
 /* Signup Container ========================================================== */
 .signupContainer {
-  margin-top: 2rem;
+  margin-top: 0rem;
   padding: 5rem 8rem 8rem 8rem;
   -webkit-box-shadow: 0px 0px 34px 15px rgba(46, 245, 255, 0.74);
   -moz-box-shadow: 0px 0px 44px 15px rgba(46, 255, 252, 0.74);
@@ -674,11 +674,62 @@ img {
     height: 95vh;
     width: 95vw;
   }
+  .loginContainer{
+    margin: 0;
+  }
+  .signupContainer{
+    margin:0;
+  }
+  .dashboardTitle{
+    font-size: 4rem;
+  }
+  .ruleTitle{
+    font-size: 1.5rem;
+  }
+  .rule{
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 900px) {
-  .displayBox {
-    padding: 2rem;
+  .base{
+    height: 100vh;
+     width: 100vw; 
+   }
+ 
+   .gameBox{
+ height: 100vh;
+     width: 95vw;
+   }
+ 
+   .displayBox {
+     padding: 0;
+     height: 100vh;
+     width: 95vw;
+   }
+
+  .homeTitle{
+    font-size: 8rem;
+  }
+  .loginContainer{
+    margin: 1rem;
+  }
+  .signupContainer{
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .rules{
+    margin: .85rem;
+  }
+  .ruleTitle{
+    font-size: 1rem;
+  }
+  .rule{
+    font-size: .85rem;
+      margin: .5rem;
+    
   }
 }
 
@@ -692,7 +743,15 @@ img {
   }
 
   .loginContainer {
-    padding: 1rem 0 2rem;
+    padding: 1rem 0 0 0;
+  }
+  .homeTitle{
+    font-size: 7rem;
+  }
+  
+  .signupContainer{
+   margin: 1rem; 
+   padding: 2rem 1rem 4rem 1rem;
   }
 }
 
@@ -702,6 +761,9 @@ img {
   }
   .btnOut2 {
     margin: 0.25rem;
+  }
+  .dashboardTitle{
+    font-size: 3rem;
   }
 }
 
@@ -718,12 +780,97 @@ img {
     height: 100vh;
     width: 100vw;
   }
+  .rule{
+    margin: .5rem;
+  }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 365px) {
+  .base{
+   height: 100vh;
+    width: 100vw; 
+  }
+
+  .gameBox{
+  height: 95vh;
+    width: 95vw;
+  }
+
+  .displayBox {
+    padding: 0;
+    height: 95vh;
+    width: 95vw;
+  }
+  .homeTitle{
+    font-size: 5rem;
+  }
+  .lsTitle{
+    font-size: 2rem;
+  }
+  .inputLabel{
+    font-size: 1rem;
+  }
+  .suTitle{
+    font-size: 2rem;
+  }
+  .suInputLabel{
+    font-size: 1rem;
+  }
+  .dashboardTitle{
+    font-size: 1.75rem;
+  }
+  .rule{
+    margin: .5rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .base{
+   height: 100vh;
+    width: 100vw; 
+    margin: 0;
+  }
+
+  .gameBox{
+height: 100vh;
+    width: 95vw;
+    margin: 0;
+  }
+
   .displayBox {
     padding: 0;
     height: 100vh;
-    width: 100vw;
+    width: 95vw;
+  }
+  .homeTitle{
+    font-size: 4rem;
+  }
+
+  h3{
+    font-size: .75rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navBtnContainer {
+    scale: 75%;
+    margin: 0rem;
+    padding: 0rem;
+  }
+
+  .loginContainer{
+    scale: 80%;
+  }
+
+  .signupContainer{
+    scale: 80%;
+  }
+  .dashboardTitle{
+    font-size: .95rem;
+  }
+
+  .rules{
+    scale: 80%; 
+    margin: 0;
   }
 }
