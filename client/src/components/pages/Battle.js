@@ -142,8 +142,9 @@ export default function Battle() {
               {/* 	have a robotlevel button and robotlevel state that affect the image, and bot logic						 */}
               <img src={botLevel}></img>
             </div>
+            <h4 className="botTaunt">{taunt}</h4>
             <div className="botCard">
-              <div>
+              <div className="lvlBtns">
                 <button
                   className="button"
                   onClick={() => {
@@ -185,7 +186,7 @@ export default function Battle() {
                   Level 4
                 </button>
               </div>
-              <h4 className="botTaunt">{taunt}</h4>
+           
             </div>
             <div className="userChoices">
               <div className="choice">
