@@ -9,7 +9,6 @@ export default function Home() {
     if (Auth.loggedIn()) {
       navigate('/dashboard');
       return;
-
     }
   }, []);
   return (
@@ -43,5 +42,4 @@ export default function Home() {
 			</div> */}
     </div>
   );
-
 }
