@@ -13,11 +13,7 @@ export default function Home() {
   }, []);
   return (
     <div>
-      {/* // <div className="base">
-			// 	<div className="gameBox">
-			// 		<div className="displayBox"> */}
       <h1 className="homeTitle"> Beat the Bots!</h1>
-      {/* <img className='homeBot' src="/assets/homeBot.png" alt='robot'></img> */}
       <h3>
         A team building game to challenge your communication and problem
         solving skills.<br></br>
@@ -37,9 +33,6 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      {/* </div>
-				</div>
-			</div> */}
     </div>
   );
 }

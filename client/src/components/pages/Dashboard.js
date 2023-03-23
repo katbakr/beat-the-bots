@@ -22,9 +22,6 @@ export default function Dashboard({ username }) {
 
    return (
       <div className="byeContainer">
-         {/* <div className="base">
-         <div className='gameBox'>
-            <div className='displayBox'> */}
          <h1 className='dashboardTitle'> Hi {username}</h1>
          <div className="rules">
             <h1 className="ruleTitle">How to Play:</h1>
@@ -58,9 +55,6 @@ export default function Dashboard({ username }) {
                </button>
             </Link>
          </div>
-         {/* </div>
-         </div>
-      </div> */}
       </div>
    );
 }
