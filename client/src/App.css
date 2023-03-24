@@ -541,7 +541,8 @@ img {
   background-color: #a8bbbf;
 }
 .messageMeta {
-  color: #ffffff;
+  color: #dcadee;
+  font-size: 0.85rem;
 }
 
 .messageText {
@@ -556,6 +557,7 @@ img {
   border: solid 1px rgb(155, 100, 218);
   border-radius: 1rem;
   margin: 1rem 0 1rem 0;
+  font-size: 1.1rem;
 }
 
 .roomSelect {
