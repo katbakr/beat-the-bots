@@ -115,19 +115,12 @@ export default function Battle() {
   };
 
   return (
-    // <div className="base">
     <div
-    // className="gameBox"
-    // id="display"
     >
       <div>
         <Link to="/bye">
           <button className="button" id="suBtn">
             Logout
-            {/* <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span> */}
           </button>
         </Link>
       </div>
@@ -142,8 +135,9 @@ export default function Battle() {
               {/* 	have a robotlevel button and robotlevel state that affect the image, and bot logic						 */}
               <img src={botLevel}></img>
             </div>
+            <h4 className="botTaunt">{taunt}</h4>
             <div className="botCard">
-              <div>
+              <div className="lvlBtns">
                 <button
                   className="button"
                   onClick={() => {
@@ -185,12 +179,10 @@ export default function Battle() {
                   Level 4
                 </button>
               </div>
-              <h4 className="botTaunt">{taunt}</h4>
+           
             </div>
             <div className="userChoices">
               <div className="choice">
-                {/* <img src="./assets/rock.png"></img> */}
-                {/* <div className="btn1"> */}
                 <button
                   className="button"
                   id="rockBtn2"
@@ -202,13 +194,6 @@ export default function Battle() {
                   <span></span>
                   <span></span>
                 </button>
-
-                {/* <button
-											className="rockBtn"
-											onClick={() => handleClick("ROCK")}>
-											Ro
-										</button> */}
-                {/* </div> */}
               </div>
               <div className="choice" id="btn2">
                 <button
@@ -222,15 +207,6 @@ export default function Battle() {
                   <span></span>
                   <span></span>
                 </button>
-
-                {/* <img src="./assets/paper.png"></img>
-									<div className="btn2">
-										<button
-											className="paperBtn"
-											onClick={() => handleClick("PAPER")}>
-											Pa
-										</button>
-									</div> */}
               </div>
               <div className="choice">
                 <button
@@ -244,15 +220,6 @@ export default function Battle() {
                   <span></span>
                   <span></span>
                 </button>
-
-                {/* <img src="./assets/scissors.png"></img>
-									<div className="btn3">
-										<button
-											className="scissorsBtn"
-											onClick={() => handleClick("SCISSORS")}>
-											Sc
-										</button>
-									</div> */}
               </div>
             </div>
           </div>
@@ -271,6 +238,5 @@ export default function Battle() {
         </div>
       </div>
     </div>
-    // </div>
   );
 }

@@ -5,12 +5,12 @@ import Auth from "../../utils/auth";
 
 function Bye() {
 
-	useEffect(() => {
-		const timer = setTimeout(() => {
-			Auth.logout();
-		}, 3500);
-		return () => clearTimeout(timer);
-	}, []);
+	 useEffect(() => {
+	 	const timer = setTimeout(() => {
+	 		Auth.logout();
+	 	}, 3500);
+	 	return () => clearTimeout(timer);
+	 }, []);
 
 	return (
 		<div className="byeContainer">

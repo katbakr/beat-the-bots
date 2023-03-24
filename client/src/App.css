@@ -1,5 +1,3 @@
-/* App.js ========================================================= */
-
 /* Home.js ======================================================= */
 .base {
   display: flex;
@@ -26,7 +24,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 4rem;
+  padding-top: 2rem;
 }
 
 .homeTitle {
@@ -38,6 +36,7 @@
   font-size: 6rem;
   text-align: center;
   margin: 1rem;
+  margin-top: 8rem;
   color: #bdeaf6;
   text-shadow: 0 0 7px #b5c5c9, 0 0 10px #505050, 0 0 21px #fff,
     0 0 42px rgb(0, 166, 255), 0 0 82px rgb(0, 162, 255),
@@ -280,7 +279,6 @@ img {
   font-weight: 700;
   border: solid 3px #96eeff;
   padding: 1rem 4rem 1rem 4rem;
-  /* margin: 2rem; */
 }
 
 .formContainer {
@@ -349,7 +347,6 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* margin-right: 12rem; */
 }
 
 .botImg {
@@ -374,17 +371,21 @@ img {
   color: rgb(177, 210, 246);
   font-size: 1.5rem;
 }
+.lvlBtns button {
+  margin: 0.25rem;
+  border: solid 1px;
+}
 
 .userChoices {
   display: flex;
+  justify-content: center;
   padding: 0;
   margin: 0;
 }
 
 .choice {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
 }
 
 .choice img {
@@ -393,70 +394,13 @@ img {
   height: auto;
 }
 
-/* Button choice 2 */
-/* .btn1 {
-  height: 7rem;
-  width: 7rem;
-  border-radius: 50%;
-  background-color: rgb(9, 70, 30);
-  box-shadow: 0 0 0 5px #254b34 inset;
-}
-
-.btn2 {
-  height: 7rem;
-  width: 7rem;
-  border-radius: 50%;
-  background-color: rgb(70, 9, 9);
-  box-shadow: 0 0 0 5px #4b2525 inset;
-}
-
-.btn3 {
-  height: 7rem;
-  width: 7rem;
-  border-radius: 50%;
-  background-color: rgb(125, 115, 18);
-  box-shadow: 0 0 0 5px #79713d inset;
-}
-.paperBtn {
-  height: 5.5rem;
-  width: 5.5rem;
-  border-radius: 50%;
-  margin: 0.75rem;
-  font-size: 1.5rem;
-  background-color: rgb(215, 40, 40);
-  color: white;
-  cursor: pointer;
-  box-shadow: 0 0 0 3px rgb(15, 15, 47), 0 0 0 3px #2c1616 inset, 0 0 5px 8px#8d2929 inset,0 0 0 17px #5d1515 inset,
-    10px 25px 32px 25px #400b0b inset;
-}
-.rockBtn {
-  height: 5.5rem;
-  width: 5.5rem;
-  border-radius: 50%;
-  margin: 0.75rem;
-  font-size: 1.5rem;
-  background-color: rgb(35, 147, 57);
-  color: white;
-  cursor: pointer;
-  box-shadow: 0 0 0 3px rgb(15, 47, 27), 0 0 0 3px #162c20 inset, 0 0 5px 8px#3f6750 inset,0 0 0 17px #155d29 inset,
-    10px 25px 32px 25px #0b401d inset;
-    /* border: none; */
-/* }
-.scissorsBtn {
-  height: 5.5rem;
-  width: 5.5rem;
-  border-radius: 50%;
-  margin: 0.75rem;
-  font-size: 1.5rem;
-  background-color: rgb(224, 221, 22);
-  color: white;
-  cursor: pointer;
-  box-shadow: 0 0 0 3px rgb(47, 46, 15), 0 0 0 3px #3f3f13 inset, 0 0 5px 8px#938b38 inset,0 0 0 17px #938906 inset,
-    10px 25px 32px 25px #796f05 inset;
-} */
-
 .userChoices {
-  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+}
+.botTaunt {
+  margin: 1rem;
 }
 
 #rockBtn2 {
@@ -523,7 +467,6 @@ img {
 }
 
 .chatBox {
-  /* margin-left: 10rem; */
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -546,15 +489,9 @@ img {
 #visible-scrollbar {
   display: block;
   overflow: auto;
-  /* height: 2em; */
 }
 
 .messageInputContainer {
-  /* background-image: linear-gradient(black, rgb(25, 25, 25), black);
-  padding: 2rem;
-  height: 40rem;
-  width: auto; */
-  /* padding-top: 40rem; */
   display: flex;
   height: 3rem;
 }
@@ -604,7 +541,8 @@ img {
   background-color: #a8bbbf;
 }
 .messageMeta {
-  color: #ffffff;
+  color: #dcadee;
+  font-size: 0.85rem;
 }
 
 .messageText {
@@ -619,10 +557,16 @@ img {
   border: solid 1px rgb(155, 100, 218);
   border-radius: 1rem;
   margin: 1rem 0 1rem 0;
+  font-size: 1.1rem;
 }
 
 .roomSelect {
-  background-color: teal;
+  background-color: rgb(6, 22, 57);
+  color: #94d4d9;
+  font-size: 1.25rem;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  border: solid 2px;
+  margin-bottom: 0.5rem;
 }
 
 /* BYE PAGE ===================================================================*/
@@ -665,7 +609,38 @@ img {
   color: #c2d9ff;
 }
 
+.error-text {
+  color: white;
+  font-size: 1rem;
+}
 /* Responsive design ========================================================= */
+@media (max-width: 1300px) {
+  .displayBox {
+    padding: 2rem;
+  }
+  .gameBox {
+    height: 95vh;
+    width: 95vw;
+  }
+  .playContainer {
+    margin: 0;
+    padding: 0;
+  }
+  .botBox {
+    padding: 0;
+    margin: 0;
+  }
+
+  .botImg img {
+    margin: 0;
+    width: 15rem;
+    height: auto;
+  }
+  .rightColumn {
+    margin: 1rem;
+  }
+}
+
 @media (max-width: 1200px) {
   .displayBox {
     padding: 2rem;
@@ -674,62 +649,106 @@ img {
     height: 95vh;
     width: 95vw;
   }
-  .loginContainer{
+  .loginContainer {
     margin: 0;
   }
-  .signupContainer{
-    margin:0;
+  .signupContainer {
+    margin: 0;
   }
-  .dashboardTitle{
+  .dashboardTitle {
     font-size: 4rem;
   }
-  .ruleTitle{
+  .ruleTitle {
     font-size: 1.5rem;
   }
-  .rule{
+  .rule {
     font-size: 1rem;
+  }
+
+  .botCard {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .gameStats {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 1050px) {
+  .gameStats {
+    width: 20rem;
+    height: auto;
+  }
+  .chatBox {
+    width: 100%;
+  }
+  .messagesContainer {
+    width: 20rem;
+  }
+  .messageInputContainer {
+    width: 10rem;
+  }
+  .messageInput {
+    width: 15rem;
   }
 }
 
 @media (max-width: 900px) {
-  .base{
+  .base {
     height: 100vh;
-     width: 100vw; 
-   }
- 
-   .gameBox{
- height: 100vh;
-     width: 95vw;
-   }
- 
-   .displayBox {
-     padding: 0;
-     height: 100vh;
-     width: 95vw;
-   }
+    width: 100%;
+  }
 
-  .homeTitle{
+  .gameBox {
+    height: 100vh;
+    width: 95%;
+  }
+
+  .displayBox {
+    padding: 0;
+    height: 100%;
+    width: 95vw;
+  }
+
+  .homeTitle {
     font-size: 8rem;
   }
-  .loginContainer{
+  .loginContainer {
     margin: 1rem;
   }
-  .signupContainer{
+  .signupContainer {
     margin: 1rem;
+  }
+  .lvlBtns {
+    /* scale: 80%; */
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  .lvlBtns button {
+    padding: 1rem 8rem 1rem 8rem;
+    margin: 0.5rem;
+  }
+  .userChoices {
+    margin: 0;
+  }
+  .playContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
 @media (max-width: 750px) {
-  .rules{
-    margin: .85rem;
+  .rules {
+    margin: 0.85rem;
   }
-  .ruleTitle{
+  .ruleTitle {
     font-size: 1rem;
   }
-  .rule{
-    font-size: .85rem;
-      margin: .5rem;
-    
+  .rule {
+    font-size: 0.85rem;
+    margin: 0.5rem;
   }
 }
 
@@ -745,14 +764,21 @@ img {
   .loginContainer {
     padding: 1rem 0 0 0;
   }
-  .homeTitle{
+  .homeTitle {
     font-size: 7rem;
   }
-  
-  .signupContainer{
-   margin: 1rem; 
-   padding: 2rem 1rem 4rem 1rem;
+
+  .signupContainer {
+    margin: 1rem;
+    padding: 2rem 1rem 4rem 1rem;
   }
+}
+.battleTitle {
+  font-size: 2rem;
+}
+.userChoices {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 520px) {
@@ -762,15 +788,33 @@ img {
   .btnOut2 {
     margin: 0.25rem;
   }
-  .dashboardTitle{
+  .dashboardTitle {
     font-size: 3rem;
+    margin: 0;
+    padding: 0;
+  }
+  .botCard {
+    flex-direction: column;
   }
 }
 
-@media (max-width: 400px) {
-  .displayBox {
-    padding: 0rem;
+@media (max-width: 430px) {
+  .base {
+    height: 100vh;
+    width: 100%;
   }
+
+  .gameBox {
+    height: 100%;
+    width: 95%;
+  }
+
+  .displayBox {
+    padding: 0;
+    height: 100%;
+    width: 95vw;
+  }
+
   .navBtnContainer {
     display: flex;
     flex-direction: column;
@@ -780,59 +824,66 @@ img {
     height: 100vh;
     width: 100vw;
   }
-  .rule{
-    margin: .5rem;
+  .rule {
+    margin: 0.5rem;
+  }
+  .titleContainer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .userChoices button {
+    padding: 1rem 3rem 1rem 3rem;
   }
 }
 
 @media (max-width: 365px) {
-  .base{
-   height: 100vh;
-    width: 100vw; 
+  .base {
+    height: 100vh;
+    width: 100%;
   }
 
-  .gameBox{
-  height: 95vh;
-    width: 95vw;
+  .gameBox {
+    height: 100%;
+    width: 95%;
   }
 
   .displayBox {
     padding: 0;
-    height: 95vh;
+    height: 100%;
     width: 95vw;
   }
-  .homeTitle{
+  .homeTitle {
     font-size: 5rem;
   }
-  .lsTitle{
+  .lsTitle {
     font-size: 2rem;
   }
-  .inputLabel{
+  .inputLabel {
     font-size: 1rem;
   }
-  .suTitle{
+  .suTitle {
     font-size: 2rem;
   }
-  .suInputLabel{
+  .suInputLabel {
     font-size: 1rem;
   }
-  .dashboardTitle{
+  .dashboardTitle {
     font-size: 1.75rem;
   }
-  .rule{
-    margin: .5rem;
+  .rule {
+    margin: 0.5rem;
   }
 }
 
 @media (max-width: 300px) {
-  .base{
-   height: 100vh;
-    width: 100vw; 
+  .base {
+    height: 100vh;
+    width: 100vw;
     margin: 0;
   }
 
-  .gameBox{
-height: 100vh;
+  .gameBox {
+    height: 100vh;
     width: 95vw;
     margin: 0;
   }
@@ -842,12 +893,12 @@ height: 100vh;
     height: 100vh;
     width: 95vw;
   }
-  .homeTitle{
+  .homeTitle {
     font-size: 4rem;
   }
 
-  h3{
-    font-size: .75rem;
+  h3 {
+    font-size: 0.75rem;
     padding: 0;
     margin: 0;
   }
@@ -858,19 +909,19 @@ height: 100vh;
     padding: 0rem;
   }
 
-  .loginContainer{
+  .loginContainer {
     scale: 80%;
   }
 
-  .signupContainer{
+  .signupContainer {
     scale: 80%;
   }
-  .dashboardTitle{
-    font-size: .95rem;
+  .dashboardTitle {
+    font-size: 0.95rem;
   }
 
-  .rules{
-    scale: 80%; 
+  .rules {
+    scale: 80%;
     margin: 0;
   }
 }
