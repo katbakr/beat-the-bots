@@ -23,22 +23,20 @@ export const ADD_USER = gql`
 		}
 	}
 `;
-
+//Careful! we need to pass the "_id" of the level as well as the newest round history.
 export const UPDATE_ROUND_HISTORY = gql`
-# example parameters: "levelId": "1",
-  "roundHistory": "bRhPwH",
-mutation UpdateRoundHistory($levelId: ID!, $roundHistory: String) {
-  updateRoundHistory(levelId: $levelId, roundHistory: $roundHistory) {
-    _id
-    username
-    password
-    levels {
-      levelId
-      levelName
-      isLocked
-      isDefeated
-      roundHistory
-    }
-  }
-}
+	mutation UpdateRoundHistory($levelId: ID!, $roundHistory: String) {
+		updateRoundHistory(levelId: $levelId, roundHistory: $roundHistory) {
+			_id
+			username
+			password
+			levels {
+				levelId
+				levelName
+				isLocked
+				isDefeated
+				roundHistory
+			}
+		}
+	}
 `;

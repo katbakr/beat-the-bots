@@ -9,40 +9,40 @@ const levelData = [
 		levelName: "Level1",
 		isLocked: false,
 		isDefeated: false,
-		// roundHistory: [],
-		roundHistory: "asdf",
+		roundHistory: ["asdf"],
+		//roundHistory: "asdf",
 	},
 	{
 		levelId: 2,
 		levelName: "Level2",
 		isLocked: true,
 		isDefeated: false,
-		// roundHistory: [],
-		roundHistory: "asdf",
+		roundHistory: ["asdf"],
+		//roundHistory: "asdf",
 	},
 	{
 		levelId: 3,
 		levelName: "Level3",
 		isLocked: true,
 		isDefeated: false,
-		// roundHistory: [],
-		roundHistory: "asdf",
+		roundHistory: ["asdf"],
+		//roundHistory: "asdf",
 	},
 	{
 		levelId: 4,
 		levelName: "Level4",
 		isLocked: true,
 		isDefeated: false,
-		//roundHistory: [],
-		roundHistory: "asdf",
+		roundHistory: ["asdf"],
+		//roundHistory: "asdf",
 	},
 	{
 		levelId: 5,
 		levelName: "Level5",
 		isLocked: true,
 		isDefeated: false,
-		// roundHistory: [],
-		roundHistory: "asdf",
+		roundHistory: ["asdf"],
+		//roundHistory: "asdf",
 	},
 ];
 
@@ -107,9 +107,11 @@ const resolvers = {
 					//finds the exact level (user, and level)
 					//finding the user, not the level, finding the user by the id number, which we get from the context
 					//find user by id, inside there, level fields, and specific level
-					{ _id: context.user._id, "levels.levelId": levelId },
+					//{ _id: context.user._id, "levels.levelId": levelId },
+					{ "levels._id": levelId },
 					//add , given levelId, look in level, find roundHistory, add new roundHistory which was given above
-					{ $addToSet: { levels: { roundHistory: roundHistory } } },
+					{ $push: { "levels.$.roundHistory": roundHistory } },
+					//{ $addToSet: { levels: { roundHistory: roundHistory } } },
 					{ new: true }
 				);
 				return userData;
