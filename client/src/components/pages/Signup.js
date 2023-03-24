@@ -58,19 +58,11 @@ function Signup(props) {
           <div className="navBtns">
               <button type="submit" className="button" id='suBtn'>
                 Submit
-                {/* <span></span>
-              <span></span>
-              <span></span>
-              <span></span>  */}
               </button>
             <div>
               <Link to="/login">
                 <button className="button" id='suBtn'>
                   Already have an Account?
-                  {/* <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span> */}
                 </button>
               </Link>
             </div>

@@ -1,5 +1,3 @@
-/* App.js ========================================================= */
-
 /* Home.js ======================================================= */
 .base {
   display: flex;
@@ -38,6 +36,7 @@
   font-size: 6rem;
   text-align: center;
   margin: 1rem;
+  margin-top: 8rem;
   color: #bdeaf6;
   text-shadow: 0 0 7px #b5c5c9, 0 0 10px #505050, 0 0 21px #fff,
     0 0 42px rgb(0, 166, 255), 0 0 82px rgb(0, 162, 255),
@@ -280,7 +279,6 @@ img {
   font-weight: 700;
   border: solid 3px #96eeff;
   padding: 1rem 4rem 1rem 4rem;
-  /* margin: 2rem; */
 }
 
 .formContainer {
@@ -349,7 +347,6 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* margin-right: 12rem; */
 }
 
 .botImg {
@@ -374,8 +371,8 @@ img {
   color: rgb(177, 210, 246);
   font-size: 1.5rem;
 }
-.lvlBtns button{
-  margin: .25rem;
+.lvlBtns button {
+  margin: 0.25rem;
   border: solid 1px;
 }
 
@@ -397,74 +394,12 @@ img {
   height: auto;
 }
 
-/* Button choice 2 */
-/* .btn1 {
-  height: 7rem;
-  width: 7rem;
-  border-radius: 50%;
-  background-color: rgb(9, 70, 30);
-  box-shadow: 0 0 0 5px #254b34 inset;
-}
-
-.btn2 {
-  height: 7rem;
-  width: 7rem;
-  border-radius: 50%;
-  background-color: rgb(70, 9, 9);
-  box-shadow: 0 0 0 5px #4b2525 inset;
-}
-
-.btn3 {
-  height: 7rem;
-  width: 7rem;
-  border-radius: 50%;
-  background-color: rgb(125, 115, 18);
-  box-shadow: 0 0 0 5px #79713d inset;
-}
-.paperBtn {
-  height: 5.5rem;
-  width: 5.5rem;
-  border-radius: 50%;
-  margin: 0.75rem;
-  font-size: 1.5rem;
-  background-color: rgb(215, 40, 40);
-  color: white;
-  cursor: pointer;
-  box-shadow: 0 0 0 3px rgb(15, 15, 47), 0 0 0 3px #2c1616 inset, 0 0 5px 8px#8d2929 inset,0 0 0 17px #5d1515 inset,
-    10px 25px 32px 25px #400b0b inset;
-}
-.rockBtn {
-  height: 5.5rem;
-  width: 5.5rem;
-  border-radius: 50%;
-  margin: 0.75rem;
-  font-size: 1.5rem;
-  background-color: rgb(35, 147, 57);
-  color: white;
-  cursor: pointer;
-  box-shadow: 0 0 0 3px rgb(15, 47, 27), 0 0 0 3px #162c20 inset, 0 0 5px 8px#3f6750 inset,0 0 0 17px #155d29 inset,
-    10px 25px 32px 25px #0b401d inset;
-    /* border: none; */
-/* }
-.scissorsBtn {
-  height: 5.5rem;
-  width: 5.5rem;
-  border-radius: 50%;
-  margin: 0.75rem;
-  font-size: 1.5rem;
-  background-color: rgb(224, 221, 22);
-  color: white;
-  cursor: pointer;
-  box-shadow: 0 0 0 3px rgb(47, 46, 15), 0 0 0 3px #3f3f13 inset, 0 0 5px 8px#938b38 inset,0 0 0 17px #938906 inset,
-    10px 25px 32px 25px #796f05 inset;
-} */
-
 .userChoices {
   display: flex;
   flex-direction: row;
   margin: 1rem;
 }
-.botTaunt{
+.botTaunt {
   margin: 1rem;
 }
 
@@ -532,7 +467,6 @@ img {
 }
 
 .chatBox {
-  /* margin-left: 10rem; */
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -555,15 +489,9 @@ img {
 #visible-scrollbar {
   display: block;
   overflow: auto;
-  /* height: 2em; */
 }
 
 .messageInputContainer {
-  /* background-image: linear-gradient(black, rgb(25, 25, 25), black);
-  padding: 2rem;
-  height: 40rem;
-  width: auto; */
-  /* padding-top: 40rem; */
   display: flex;
   height: 3rem;
 }
@@ -631,7 +559,12 @@ img {
 }
 
 .roomSelect {
-  background-color: teal;
+  background-color: rgb(6, 22, 57);
+  color: #94d4d9;
+  font-size: 1.25rem;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  border: solid 2px;
+  margin-bottom: 0.5rem;
 }
 
 /* BYE PAGE ===================================================================*/
@@ -674,6 +607,10 @@ img {
   color: #c2d9ff;
 }
 
+.error-text {
+  color: white;
+  font-size: 1rem;
+}
 /* Responsive design ========================================================= */
 @media (max-width: 1300px) {
   .displayBox {
@@ -740,28 +677,28 @@ img {
     width: 20rem;
     height: auto;
   }
-  .chatBox{
+  .chatBox {
     width: 100%;
   }
-  .messagesContainer{
+  .messagesContainer {
     width: 20rem;
   }
-  .messageInputContainer{
+  .messageInputContainer {
     width: 10rem;
   }
-  .messageInput{
+  .messageInput {
     width: 15rem;
   }
 }
 
 @media (max-width: 900px) {
   .base {
-    height: 100%;
+    height: 100vh;
     width: 100%;
   }
 
   .gameBox {
-    height: 100%;
+    height: 100vh;
     width: 95%;
   }
 
@@ -780,20 +717,20 @@ img {
   .signupContainer {
     margin: 1rem;
   }
-  .lvlBtns{
+  .lvlBtns {
     /* scale: 80%; */
     display: flex;
     flex-direction: column;
     margin: 0;
   }
-  .lvlBtns button{
-padding: 1rem 8rem 1rem 8rem;
-margin: .50rem;
+  .lvlBtns button {
+    padding: 1rem 8rem 1rem 8rem;
+    margin: 0.5rem;
   }
-  .userChoices{
+  .userChoices {
     margin: 0;
   }
-  .playContainer{
+  .playContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -834,14 +771,13 @@ margin: .50rem;
     padding: 2rem 1rem 4rem 1rem;
   }
 }
-.battleTitle{
+.battleTitle {
   font-size: 2rem;
 }
-.userChoices{
+.userChoices {
   display: flex;
   flex-wrap: wrap;
 }
-
 
 @media (max-width: 520px) {
   .btnOut1 {
@@ -855,14 +791,14 @@ margin: .50rem;
     margin: 0;
     padding: 0;
   }
-  .botCard{
+  .botCard {
     flex-direction: column;
   }
 }
 
 @media (max-width: 430px) {
   .base {
-    height: 100%;
+    height: 100vh;
     width: 100%;
   }
 
@@ -890,17 +826,17 @@ margin: .50rem;
     margin: 0.5rem;
   }
   .titleContainer {
-   display: flex;
-   flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
   }
-  .userChoices button{
-    padding:1rem 3rem 1rem 3rem;
+  .userChoices button {
+    padding: 1rem 3rem 1rem 3rem;
   }
 }
 
 @media (max-width: 365px) {
   .base {
-    height: 100%;
+    height: 100vh;
     width: 100%;
   }
 
@@ -935,7 +871,6 @@ margin: .50rem;
   .rule {
     margin: 0.5rem;
   }
-
 }
 
 @media (max-width: 300px) {
