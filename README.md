@@ -67,7 +67,7 @@ Each collaborator contributed to this project by helping with:
 
 - [Rhys Smoker](https://github.com/Noctiluca-scintillans): Backend typeDefs & resolvers, Concept & Mockup, User authentication.
 
-- [Jacob Meyers](https://github.com/vlad-kronk): Socket.io realtime chat room functionality.
+- [Jacob Meyers](https://github.com/vlad-kronk): Socket.io realtime chat room functionality, Heroku deployment, remote database setup, frontend routers.
 
 - [Matthew Williams](https://github.com/matwll): TypeDefs, Bot logic for battle, utils, signup/login pages.
 
